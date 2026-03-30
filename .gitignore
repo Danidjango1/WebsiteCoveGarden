@@ -1,0 +1,20 @@
+# Environment & Credentials
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-spezifisch
+.watchdog
+skills-lock.json
+CLAUDE.md (not needed on server)

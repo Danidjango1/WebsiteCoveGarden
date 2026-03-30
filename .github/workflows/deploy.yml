@@ -1,0 +1,57 @@
+name: Deploy to all-inkl FTP
+
+# Automatischer Deployment bei jedem Push zu main
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'style.css'
+      - 'script.js'
+      - 'images/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ${{ secrets.FTP_REMOTE_PATH }}/
+          # Nur diese Dateien hochladen
+          exclude: |
+            **/.git*
+            **/node_modules/**
+            **/.env
+            **/.env.example
+            **/CLAUDE.md
+            **/requirements.txt
+            **/upload-ftp.py
+            **/.vscode/**
+            **/skills-lock.json
+            **/README.md
+            **/.gitignore
+            **/FTP-UPLOAD.md
+            **/.github/**
+          state-name: .ftp-deploy-sync-state.json
+          dangerous-clean-slate: false
+
+      - name: Deployment Success ✅
+        if: success()
+        run: echo "Website erfolgreich zu all-inkl deployed!"
+
+      - name: Deployment Failed ❌
+        if: failure()
+        run: |
+          echo "Deployment fehlgeschlagen!"
+          echo "Überprüfe die GitHub Secrets: FTP_HOST, FTP_USER, FTP_PASSWORD, FTP_REMOTE_PATH"
