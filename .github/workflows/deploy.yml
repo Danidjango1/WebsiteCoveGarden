@@ -4,7 +4,8 @@ name: Deploy to all-inkl FTP
 on:
   push:
     branches:
-      - main
+      - master
+      
     paths:
       - 'index.html'
       - 'style.css'
