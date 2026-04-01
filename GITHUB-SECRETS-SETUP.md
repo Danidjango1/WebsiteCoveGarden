@@ -69,9 +69,11 @@ Beispiel: `covegarden_ftp`
 | Feld | Wert |
 |---|---|
 | **Name** | `FTP_REMOTE_PATH` |
-| **Value** | `/public_html` oder `/www` |
+| **Value** | `/w0189d65/terzle.com/covegarden` |
 
-Typisch für all-inkl: `/public_html`
+Empfohlen: separater Unterordner statt WordPress-Root.
+
+Wenn WordPress im Root liegt (`wp-admin`, `wp-content`, `wp-includes`), nicht in diese 3 Ordner deployen.
 
 → **Add secret** klicken
 
@@ -111,6 +113,8 @@ git push origin master
 - ✅ Website zu all-inkl hochgeladen
 - ✅ Du siehst Status unter **Actions-Tab**
 
+Alternativ ohne Push: **Actions → Deploy to all-inkl FTP → Run workflow**.
+
 ---
 
 ## Sicherheit Check
@@ -139,6 +143,8 @@ Sollte NICHTS zeigen (außer dieser Dokumentation)! ✅
 4. Du solltest einen laufenden Workflow sehen ▶️
 5. Nach 1-2 Min: Status wird ✅ (erfolgreich)
 6. Deine Live-Website sollte die Änderung zeigen!
+
+Wenn du auf Unterordner deployt hast, teste direkt die Unterordner-URL, z.B. `https://terzle.com/covegarden/`.
 
 ---
 

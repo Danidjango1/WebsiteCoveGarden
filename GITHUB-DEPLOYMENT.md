@@ -1,6 +1,6 @@
 # 🚀 GitHub Actions Auto-Deployment für all-inkl
 
-Automatischer Upload zu all-inkl bei jedem Push + GitHub Pages Hosting
+Automatischer Upload zu all-inkl bei jedem Push auf `master` + optionaler manueller Start im Actions-Tab.
 
 ## Setup (einmalig)
 
@@ -15,7 +15,7 @@ Klicke auf **"New repository secret"** und füge folgende 4 Secrets ein:
 | `FTP_HOST` | FTP-Server von all-inkl | `ftp.covegarden.de` |
 | `FTP_USER` | FTP-Benutzername | `dein_benutzername` |
 | `FTP_PASSWORD` | FTP-Passwort | `dein_passwort123` |
-| `FTP_REMOTE_PATH` | Zielordner | `/public_html/cove` |
+| `FTP_REMOTE_PATH` | Zielordner | `/w0189d65/terzle.com/covegarden` |
 
 > **⛔ WICHTIG:** GitHub verschlüsselt diese Secrets! Sie sind NIEMALS im Code sichtbar.
 
@@ -49,6 +49,15 @@ Ab jetzt passiert **automatisch**:
 
 Das ist es! Keine manuellen Uploads mehr nötig.
 
+### Manueller Start (Run workflow)
+
+Falls kein Push erfolgen soll, kannst du den Workflow auch per Klick starten:
+
+1. **GitHub → Actions**
+2. Workflow **Deploy to all-inkl FTP** öffnen
+3. **Run workflow** klicken
+4. Branch `master` wählen
+
 ## Status überprüfen
 
 1. Gehe zu **GitHub → Actions-Tab**
@@ -76,6 +85,18 @@ Deine Website ist auch automatisch unter `https://YOUR-USERNAME.github.io/Websit
 **❌ "Connection refused"**
 - FTP_HOST ist falsch
 - Keine Internetverbindung
+
+**❌ "Error: Client is closed because read ECONNRESET (data socket)"**
+- Meist kurzzeitiger FTP-Datenkanalabbruch beim Hoster
+- Workflow erneut starten (Run workflow)
+- Wenn wiederholt: `FTP_REMOTE_PATH` auf separaten Unterordner setzen (z.B. `/w0189d65/terzle.com/covegarden` statt WordPress-Root)
+
+## WordPress Hinweis
+
+Wenn der Zielordner eine bestehende WordPress-Installation ist (mit `wp-admin`, `wp-content`, `wp-includes`):
+
+- Für sichere Trennung besser in Unterordner deployen: `/w0189d65/terzle.com/covegarden`
+- URL dann: `https://terzle.com/covegarden/`
 
 ## Dateistruktur
 

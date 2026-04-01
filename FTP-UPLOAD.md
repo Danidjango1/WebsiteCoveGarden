@@ -2,6 +2,8 @@
 
 Automatischer Upload deiner Website-Dateien zu all-inkl bei jeder Änderung.
 
+> Hinweis: Das ist ein optionaler lokaler Fallback. Primär wird in diesem Projekt per GitHub Actions deployt.
+
 ## Setup
 
 ### 1. Dependencies installieren
