@@ -37,9 +37,12 @@ jobs:
           exclude: |
             **/.git*
             **/node_modules/**
+            **/.agents/**
+            **/.claude/**
             **/.env
             **/.env.example
             **/CLAUDE.md
+            **/*.md
             **/requirements.txt
             **/upload-ftp.py
             **/.vscode/**
@@ -48,6 +51,9 @@ jobs:
             **/.gitignore
             **/FTP-UPLOAD.md
             **/.github/**
+            **/wp-admin/**
+            **/wp-content/**
+            **/wp-includes/**
           state-name: .ftp-deploy-sync-state.json
           dangerous-clean-slate: false
 
