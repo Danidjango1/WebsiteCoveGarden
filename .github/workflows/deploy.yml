@@ -10,6 +10,7 @@ on:
       - 'index.html'
       - 'style.css'
       - 'script.js'
+      - '.htaccess'
       - 'images/**'
       - '.github/workflows/deploy.yml'
 
