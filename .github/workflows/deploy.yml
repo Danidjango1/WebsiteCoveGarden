@@ -24,7 +24,7 @@ jobs:
       - name: Upload to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with: 
-          protocol: ftps
+          protocol: ftp
           port: 21
 
           server: ${{ secrets.FTP_HOST }}
