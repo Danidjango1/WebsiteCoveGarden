@@ -2,6 +2,7 @@ name: Deploy to all-inkl FTP
 
 # Automatisches Deployment bei jedem Push zu master
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
