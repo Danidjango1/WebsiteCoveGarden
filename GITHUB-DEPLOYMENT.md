@@ -35,7 +35,7 @@ git add .
 git commit -m "Setup: GitHub Actions Deployment"
 
 # 3. Zu GitHub pushen
-git push origin main
+git push origin master
 ```
 
 ## Verwendung
@@ -59,7 +59,7 @@ Das ist es! Keine manuellen Uploads mehr nötig.
 
 Deine Website ist auch automatisch unter `https://YOUR-USERNAME.github.io/WebsiteCoveGarden/` erreichbar
 
-- Konfigurieren: **Settings → Pages → Source → Main Branch**
+- Konfigurieren: **Settings → Pages → Source → master Branch**
 - Kostenlos gehostet auf GitHub
 - Perfekt als Backup falls all-inkl ausfällt
 

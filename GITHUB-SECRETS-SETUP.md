@@ -102,7 +102,7 @@ git add .
 git commit -m "Add: GitHub Actions workflow"
 
 # 2. Zu GitHub pushen
-git push origin main
+git push origin master
 ```
 
 **Automatisch wird dann:**
@@ -133,7 +133,7 @@ Sollte NICHTS zeigen (außer dieser Dokumentation)! ✅
    ```bash
    git add index.html
    git commit -m "Test: Small change"
-   git push origin main
+   git push origin master
    ```
 3. Gehe zu **GitHub → Actions**
 4. Du solltest einen laufenden Workflow sehen ▶️

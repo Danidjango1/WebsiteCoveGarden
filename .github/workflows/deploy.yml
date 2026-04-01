@@ -1,11 +1,11 @@
 name: Deploy to all-inkl FTP
 
-# Automatischer Deployment bei jedem Push zu main
+# Automatisches Deployment bei jedem Push zu master
 on:
   push:
     branches:
       - master
-      
+
     paths:
       - 'index.html'
       - 'style.css'
@@ -23,7 +23,10 @@ jobs:
 
       - name: Upload to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
+        with: 
+          protocol: ftps
+          port: 21
+
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
