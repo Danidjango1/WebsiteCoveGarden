@@ -8,22 +8,29 @@ on:
       - master
 
     paths:
-      - 'index.html'
-      - 'style.css'
-      - 'script.js'
+      - '*.html'
+      - '*.css'
+      - '*.js'
       - '.htaccess'
       - 'images/**'
       - '.github/workflows/deploy.yml'
 
+concurrency:
+  group: deploy-all-inkl-master
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Upload to FTP
+      - name: Upload to FTP (attempt 1)
+        id: ftp_upload_attempt_1
+        continue-on-error: true
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with: 
           protocol: ftp
@@ -57,6 +64,53 @@ jobs:
             **/wp-includes/**
           state-name: .ftp-deploy-sync-state.json
           dangerous-clean-slate: false
+
+      - name: Wait before retry
+        if: steps.ftp_upload_attempt_1.outcome == 'failure'
+        run: sleep 20
+
+      - name: Upload to FTP (attempt 2)
+        id: ftp_upload_attempt_2
+        if: steps.ftp_upload_attempt_1.outcome == 'failure'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with: 
+          protocol: ftp
+          port: 21
+
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: ${{ secrets.FTP_REMOTE_PATH }}
+          # Nur diese Dateien hochladen
+          exclude: |
+            **/.git*
+            **/node_modules/**
+            **/.agents/**
+            **/.claude/**
+            **/.env
+            **/.env.example
+            **/CLAUDE.md
+            **/*.md
+            **/requirements.txt
+            **/upload-ftp.py
+            **/.vscode/**
+            **/skills-lock.json
+            **/README.md
+            **/.gitignore
+            **/FTP-UPLOAD.md
+            **/.github/**
+            **/wp-admin/**
+            **/wp-content/**
+            **/wp-includes/**
+          state-name: .ftp-deploy-sync-state.json
+          dangerous-clean-slate: false
+
+      - name: Fail if both attempts failed
+        if: steps.ftp_upload_attempt_1.outcome == 'failure' && steps.ftp_upload_attempt_2.outcome == 'failure'
+        run: |
+          echo "FTP deployment failed twice (attempt 1 and 2)."
+          exit 1
 
       - name: Deployment Success ✅
         if: success()
