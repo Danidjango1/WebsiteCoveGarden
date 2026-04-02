@@ -63,7 +63,7 @@ jobs:
             **/wp-content/**
             **/wp-includes/**
           state-name: .ftp-deploy-sync-state.json
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
 
       - name: Wait before retry
         if: steps.ftp_upload_attempt_1.outcome == 'failure'
@@ -104,7 +104,7 @@ jobs:
             **/wp-content/**
             **/wp-includes/**
           state-name: .ftp-deploy-sync-state.json
-          dangerous-clean-slate: false
+          dangerous-clean-slate: true
 
       - name: Fail if both attempts failed
         if: steps.ftp_upload_attempt_1.outcome == 'failure' && steps.ftp_upload_attempt_2.outcome == 'failure'
