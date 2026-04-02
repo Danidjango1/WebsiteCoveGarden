@@ -1,2 +1,1 @@
-# Serve the static homepage first, keep WordPress as fallback.
-DirectoryIndex index.html index.php
+# Intentionally left minimal to avoid host-specific override conflicts.
