@@ -69,11 +69,9 @@ Beispiel: `covegarden_ftp`
 | Feld | Wert |
 |---|---|
 | **Name** | `FTP_REMOTE_PATH` |
-| **Value** | `/w0189d65/terzle.com/covegarden` |
+| **Value** | `/w0189d65/terzle.com/` |
 
-Empfohlen: separater Unterordner statt WordPress-Root.
-
-Wenn WordPress im Root liegt (`wp-admin`, `wp-content`, `wp-includes`), nicht in diese 3 Ordner deployen.
+Dieser Pfad wird exakt als Ziel genutzt (kein weiterer Unterordner wie `covegarden`).
 
 → **Add secret** klicken
 
@@ -144,7 +142,7 @@ Sollte NICHTS zeigen (außer dieser Dokumentation)! ✅
 5. Nach 1-2 Min: Status wird ✅ (erfolgreich)
 6. Deine Live-Website sollte die Änderung zeigen!
 
-Wenn du auf Unterordner deployt hast, teste direkt die Unterordner-URL, z.B. `https://terzle.com/covegarden/`.
+Teste danach direkt deine Domain, z.B. `https://www.terzle.com/`.
 
 ---
 

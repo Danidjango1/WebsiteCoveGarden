@@ -15,7 +15,7 @@ Klicke auf **"New repository secret"** und füge folgende 4 Secrets ein:
 | `FTP_HOST` | FTP-Server von all-inkl | `ftp.covegarden.de` |
 | `FTP_USER` | FTP-Benutzername | `dein_benutzername` |
 | `FTP_PASSWORD` | FTP-Passwort | `dein_passwort123` |
-| `FTP_REMOTE_PATH` | Zielordner | `/w0189d65/terzle.com/covegarden` |
+| `FTP_REMOTE_PATH` | Zielordner | `/w0189d65/terzle.com/` |
 
 > **⛔ WICHTIG:** GitHub verschlüsselt diese Secrets! Sie sind NIEMALS im Code sichtbar.
 
@@ -89,14 +89,13 @@ Deine Website ist auch automatisch unter `https://YOUR-USERNAME.github.io/Websit
 **❌ "Error: Client is closed because read ECONNRESET (data socket)"**
 - Meist kurzzeitiger FTP-Datenkanalabbruch beim Hoster
 - Workflow erneut starten (Run workflow)
-- Wenn wiederholt: `FTP_REMOTE_PATH` auf separaten Unterordner setzen (z.B. `/w0189d65/terzle.com/covegarden` statt WordPress-Root)
+- Prüfen, ob FTP-Server bei all-inkl kurzzeitig überlastet war
 
 ## WordPress Hinweis
 
-Wenn der Zielordner eine bestehende WordPress-Installation ist (mit `wp-admin`, `wp-content`, `wp-includes`):
+Wenn im Zielpfad alte WordPress-Dateien liegen (`wp-admin`, `wp-content`, `wp-includes`), werden diese durch den Workflow weiterhin ausgeschlossen.
 
-- Für sichere Trennung besser in Unterordner deployen: `/w0189d65/terzle.com/covegarden`
-- URL dann: `https://terzle.com/covegarden/`
+Für diese Website ist der Zielpfad fest: `/w0189d65/terzle.com/` (ohne zusätzlichen Unterordner).
 
 ## Dateistruktur
 

@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
-          server-dir: ${{ secrets.FTP_REMOTE_PATH }}/
+          server-dir: ${{ secrets.FTP_REMOTE_PATH }}
           # Nur diese Dateien hochladen
           exclude: |
             **/.git*
