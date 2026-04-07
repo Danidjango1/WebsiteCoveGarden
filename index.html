@@ -1,1142 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cove Garden – Luxury Holiday Duplex in North Cyprus</title>
-  <meta name="description" content="Cove Garden is a stunning duplex maisonette in Esentepe, North Cyprus – with panoramic sea views, resort pool, and loft living between the Besparmak Mountains and the Mediterranean.">
-  <meta name="keywords" content="North Cyprus duplex loft apartment, Esentepe rental, Girne accommodation, Bahçeli vacation, North Cyprus rooftop terrace">
+  <title>TERZLE Studio | App, Website & Vermarktung fuer Ferienwohnungen weltweit</title>
+  <meta name="description" content="Wir bauen individuelle Apps, Websites, Logos und Marketing-Systeme fuer Betreiber von Ferienwohnungen weltweit. Fuer Premium-Anbieter und kleine Betreiber mit 1-3 Objekten.">
+  <meta name="keywords" content="Ferienwohnung App, Vermieter App, Premium Ferienwohnung, kleine Betreiber, Website fuer Ferienwohnung, Ferienwohnung Marketing, Logo Design, Gaestekommunikation">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════ NAVIGATION ═══════ -->
   <nav id="navbar" class="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">
-        <svg class="logo-mark" width="26" height="26" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Sun circle -->
-          <circle cx="18" cy="13" r="5.5" stroke="currentColor" stroke-width="2" fill="none"/>
-          <!-- Sun rays -->
-          <line x1="18" y1="3" x2="18" y2="5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="27.5" y1="13" x2="25" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="8.5" y1="13" x2="11" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="25" y1="6" x2="23.1" y2="7.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="11" y1="6" x2="12.9" y2="7.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <!-- Wave 1 -->
-          <path d="M3 25 Q7.5 22 12 25 Q16.5 28 21 25 Q25.5 22 33 25" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Wave 2 -->
-          <path d="M3 30 Q7.5 27 12 30 Q16.5 33 21 30 Q25.5 27 33 30" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
-        </svg>
-        <span class="logo-text"><span class="logo-word-light">Holiday</span> <span class="logo-word-bold">Rent</span></span>
+    <div class="nav-inner container">
+      <a href="#home" class="brand" aria-label="TERZLE Studio Startseite">
+        <span class="brand-mark">T</span>
+        <span class="brand-text">TERZLE Studio</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="#about">The Apartment</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#region">The Region</a></li>
-        <li><a href="#experiences">Experiences</a></li>
-        <li><a href="#resort">On-Site</a></li>
-        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#services">Leistungen</a></li>
+        <li><a href="#segments">Zielgruppen</a></li>
+        <li><a href="#app">App</a></li>
+        <li><a href="#marketing">Vermarktung</a></li>
+        <li><a href="#contact">Kontakt</a></li>
       </ul>
 
-      <a href="#booking" class="nav-book-btn">Request a Stay</a>
+      <a href="#contact" class="btn btn-nav">Strategiegespraech</a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Menue oeffnen" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
 
-    <!-- Mobile menu -->
-    <div class="nav-mobile" id="mobileMenu">
-      <ul>
-        <li><a href="#about">The Apartment</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#region">The Region</a></li>
-        <li><a href="#experiences">Experiences</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#booking" class="mobile-book-btn">Request a Stay</a></li>
-      </ul>
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#services">Leistungen</a>
+      <a href="#segments">Zielgruppen</a>
+      <a href="#app">App</a>
+      <a href="#marketing">Vermarktung</a>
+      <a href="#contact">Kontakt</a>
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════ HERO ══════════════ -->
-  <section id="hero" class="hero">
-
-    <div class="hero-content">
-      <div class="hero-location-pill">
-        <span class="location-dot"></span>
-        Esentepe &nbsp;·&nbsp; North Cyprus
-      </div>
-        <h1 class="hero-title">Neu!<br>Wir verwalten gern Ihre Ferienimmobilie</h1>
-      <p class="hero-tagline">A stunning duplex loft on the Golden Mile — sea views, resort pool, rooftop terrace, and the Mediterranean at your doorstep.</p>
-      <div class="hero-ctas">
-        <a href="#about" class="btn-primary">
-          Discover the Apartment
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" style="vertical-align:middle;margin-left:6px;"><path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#booking" class="btn-outline">Request a Stay</a>
-      </div>
-      <p class="hero-disclaimer">Free enquiry &nbsp;·&nbsp; No booking fees</p>
-    </div>
-
-    <!-- Auto-scrolling photo carousel -->
-    <div class="hero-carousel">
-      <div class="hero-carousel-track">
-        <!-- First set -->
-        <div class="hero-carousel-card">
-          <img src="images/pool-day.jpg" alt="Resort Pool">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">On-Site</span>
-            <span class="hero-carousel-title">Resort Pool</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/rooftop-terrace.jpg" alt="Rooftop Terrace">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Apartment</span>
-            <span class="hero-carousel-title">Rooftop Terrace</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/beach-sand.jpg" alt="Golden Beach · Karpaz Peninsula">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">Karpaz Peninsula</span>
-            <span class="hero-carousel-title">Golden Beach</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/master-bedroom.jpg" alt="Master Bedroom">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Apartment</span>
-            <span class="hero-carousel-title">Master Bedroom</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/coast-cliffs.jpg" alt="Mediterranean Coast">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Region</span>
-            <span class="hero-carousel-title">Mediterranean Coast</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/hammock-view.jpg" alt="Loft Hammock">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Apartment</span>
-            <span class="hero-carousel-title">Loft Hammock</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/girne-harbour.jpg" alt="Girne Old Harbour">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">25 km Away</span>
-            <span class="hero-carousel-title">Girne Old Harbour</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/hero-rooftop.jpg" alt="Mezzanine Loft">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Apartment</span>
-            <span class="hero-carousel-title">Mezzanine Loft</span>
-          </div>
-        </div>
-        <!-- Duplicate set for seamless loop -->
-        <div class="hero-carousel-card">
-          <img src="images/pool-day.jpg" alt="Resort Pool">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">On-Site</span>
-            <span class="hero-carousel-title">Resort Pool</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/rooftop-terrace.jpg" alt="Rooftop Terrace">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Apartment</span>
-            <span class="hero-carousel-title">Rooftop Terrace</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/beach-sand.jpg" alt="Golden Beach · Karpaz Peninsula">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">Karpaz Peninsula</span>
-            <span class="hero-carousel-title">Golden Beach</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/master-bedroom.jpg" alt="Master Bedroom">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Apartment</span>
-            <span class="hero-carousel-title">Master Bedroom</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/coast-cliffs.jpg" alt="Mediterranean Coast">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Region</span>
-            <span class="hero-carousel-title">Mediterranean Coast</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/hammock-view.jpg" alt="Loft Hammock">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Apartment</span>
-            <span class="hero-carousel-title">Loft Hammock</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/girne-harbour.jpg" alt="Girne Old Harbour">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">25 km Away</span>
-            <span class="hero-carousel-title">Girne Old Harbour</span>
-          </div>
-        </div>
-        <div class="hero-carousel-card">
-          <img src="images/hero-rooftop.jpg" alt="Mezzanine Loft">
-          <div class="hero-carousel-label">
-            <span class="hero-carousel-category">The Apartment</span>
-            <span class="hero-carousel-title">Mezzanine Loft</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ═══════════════════════════════════════ INTRO STRIP ══════ -->
-  <div class="intro-strip">
-    <div class="intro-strip-inner">
-      <div class="strip-item">
-        <span class="strip-number">330+</span>
-        <span class="strip-label">Sunny Days per Year</span>
-      </div>
-      <div class="strip-divider"></div>
-      <div class="strip-item">
-        <span class="strip-number">5 min</span>
-        <span class="strip-label">Walk to the Beach</span>
-      </div>
-      <div class="strip-divider"></div>
-      <div class="strip-item">
-        <span class="strip-number">25 km</span>
-        <span class="strip-label">to Girne (Kyrenia)</span>
-      </div>
-      <div class="strip-divider"></div>
-      <div class="strip-item">
-        <span class="strip-number">3000+</span>
-        <span class="strip-label">Years of History</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════ ABOUT ═══════════ -->
-  <section id="about" class="about">
-    <div class="container">
-      <div class="about-grid">
-
-        <div class="about-text reveal">
-          <span class="section-label">The Apartment</span>
-          <h2 class="section-title about-title">Where Every Morning<br><em>Begins with the Sea</em></h2>
-          <p class="about-lead">Wake up to the soft shimmer of the Mediterranean stretching endlessly before you. Step onto your private rooftop terrace as the sun rises over the Besparmak Mountains, coffee in hand, the world still quiet and golden. Let the day unfold at your own pace — sink into the indoor hammock and watch the afternoon light dance across the sea far below, the resort pool glittering in the courtyard beneath you. As evening falls and the sky turns amber, gather on the terrace for sundowners and the distant sound of waves. Dine beneath the stars, the warm Cyprus air carrying the scent of jasmine and salt. In the morning, the sea will be there again — faithful, luminous, and entirely yours. Cove Garden is not merely a place to stay. It is a feeling you will carry long after you leave.</p>
-
-          <div class="about-highlights">
-            <div class="about-highlight-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              <div>
-                <strong>Space &amp; Layout</strong>
-                <span>Duplex loft over 2 levels · Open-plan living &amp; dining · Mezzanine with hammock · Private rooftop terrace</span>
-              </div>
-            </div>
-            <div class="about-highlight-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-              <div>
-                <strong>Capacity</strong>
-                <span>2 Bedrooms · 2 Bathrooms · Up to 4 Guests</span>
-              </div>
-            </div>
-            <div class="about-highlight-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-              <div>
-                <strong>Views</strong>
-                <span>Panoramic sea view · Besparmak Mountains · Resort pool</span>
-              </div>
-            </div>
-            <div class="about-highlight-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <div>
-                <strong>On-Site Amenities</strong>
-                <span>Resort pool · Poolside bar · Parking · 24 h security</span>
-              </div>
-            </div>
-          </div>
-
-          <a href="#gallery" class="btn-primary btn-sm">View Gallery</a>
-        </div>
-
-        <div class="about-image reveal">
-          <img src="images/hammock-view.jpg" alt="Cove Garden – Indoor hammock with panoramic sea view" class="about-photo">
-          <div class="about-image-accent">
-            <img src="images/rooftop-terrace.jpg" alt="Private rooftop terrace with sea view" class="accent-photo" style="width:100%;height:300px;object-fit:cover;border-radius:8px;object-position:center 40%;">
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ GALLERY ══════════ -->
-  <section id="gallery" class="gallery">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Gallery</span>
-        <h2 class="section-title">The Apartment<br><em>in Detail</em></h2>
-        <p class="section-subtitle">Every corner of Cove Garden has been crafted with care. See for yourself.</p>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-item reveal">
-          <img src="images/pool-lagoon.jpg" alt="Resort lagoon pool with rainbow">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/cove-5645.jpg" alt="Cove Garden">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/living-room.jpg" alt="Open-plan living room with sea view">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/cove-5947.jpg" alt="Cove Garden">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/resort-moon.jpg" alt="Resort at night under moonlight">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/master-bedroom.jpg" alt="Master bedroom with sea view">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/cove-9259.jpg" alt="Cove Garden">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/rooftop-terrace.jpg" alt="Private rooftop terrace with sea view">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/cove-5829.jpg" alt="Cove Garden">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/cove-5807.jpg" alt="Cove Garden">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/kitchen.jpg" alt="Fully equipped kitchen">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/hammock-view.jpg" alt="Indoor hammock on mezzanine with sea and pool view">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/cove-2903.jpg" alt="Cove Garden">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/bathroom.jpg" alt="Bathroom with walk-in shower">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/bedroom2-full.jpg" alt="Second bedroom with mountain view">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/interior-night.jpg" alt="Loft interior at night with pool lights">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/cove-7929.jpg" alt="Cove Garden">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/dining-evening.jpg" alt="Evening dinner with pool view">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/workspace-sea-view.jpg" alt="Dedicated workspace with panoramic sea view">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/cove-5569.jpg" alt="Cove Garden">
-        </div>
-        <div class="gallery-item reveal">
-          <img src="images/rooftop-yoga.jpg" alt="Yoga on the rooftop terrace – your mat is waiting">
-        </div>
-      </div>
-
-      <div class="gallery-note reveal">
-        <p>More photos available on request — contact us at <a href="mailto:info@terzle.com">info@terzle.com</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ ROOMS ═══════════ -->
-  <section id="rooms" class="rooms-section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Floor Plan</span>
-        <h2 class="section-title">Rooms &amp;<br><em>Spaces</em></h2>
-        <p class="section-subtitle">Two levels plus a private rooftop terrace — every space crafted for comfort and breathtaking views.</p>
-      </div>
-
-      <div class="rooms-grid">
-
-        <div class="room-card reveal">
-          <div class="room-card-photo">
-            <img src="images/master-bedroom.jpg" alt="Master Bedroom">
-            <span class="room-level-badge">Level 1</span>
-          </div>
-          <div class="room-card-info">
-            <h3>Master Bedroom</h3>
-            <p>Double bed · Sea &amp; mountain view · Air conditioning · Built-in wardrobe · Blackout curtains</p>
-          </div>
-        </div>
-
-        <div class="room-card reveal">
-          <div class="room-card-photo room-card-photo-split">
-            <img src="images/bedroom2-full.jpg" alt="Second Bedroom" class="room-split-photo">
-            <img src="images/hammock-bedroom.jpg" alt="Mezzanine hammock view to bedroom" class="room-split-photo">
-            <span class="room-level-badge">Level 2</span>
-          </div>
-          <div class="room-card-info">
-            <h3>Second Bedroom</h3>
-            <p>Double bed · Mountain &amp; sunset view · Air conditioning · Curtained privacy partition</p>
-          </div>
-        </div>
-
-        <div class="room-card reveal">
-          <div class="room-card-photo">
-            <img src="images/living-room.jpg" alt="Living & Dining Area" style="height:300px;object-position:center 25%;">
-            <span class="room-level-badge">Level 1</span>
-          </div>
-          <div class="room-card-info">
-            <h3>Living &amp; Dining</h3>
-            <p>Open-plan · Floor-to-ceiling glass · Sea view · Dining table for 4–6 · Yellow velvet chairs</p>
-          </div>
-        </div>
-
-        <div class="room-card reveal">
-          <div class="room-card-photo">
-            <img src="images/kitchen.jpg" alt="Fully Equipped Kitchen">
-            <span class="room-level-badge">Level 1</span>
-          </div>
-          <div class="room-card-info">
-            <h3>Fully Equipped Kitchen</h3>
-            <p>Hob · Oven · Fridge · Dishwasher · Coffee maker · All essentials provided</p>
-          </div>
-        </div>
-
-        <div class="room-card reveal">
-          <div class="room-card-photo room-card-photo-triple">
-            <img src="images/bathroom.jpg" alt="Bathroom – Walk-in shower" class="room-triple-photo">
-            <img src="images/bathroom2.jpg" alt="Bathroom 2 – Full view" class="room-triple-photo">
-            <img src="images/bathroom-sink.jpg" alt="Bathroom – Sink and mirror" class="room-triple-photo">
-          </div>
-          <div class="room-card-info">
-            <h3>2 Bathrooms</h3>
-            <p>Walk-in shower · Dark-tile design · Level 1 &amp; Level 2 · Fresh towels &amp; toiletries included</p>
-          </div>
-        </div>
-
-        <div class="room-card reveal">
-          <div class="room-card-photo">
-            <img src="images/loft-mezzanine.jpg" alt="Mezzanine Loft">
-            <span class="room-level-badge">Mezzanine</span>
-          </div>
-          <div class="room-card-info">
-            <h3>Mezzanine Loft</h3>
-            <p>Indoor hammock · Workspace with sea view · Open gallery above living area · Pendant lighting</p>
-          </div>
-        </div>
-
-        <div class="room-card room-card-wide reveal">
-          <div class="room-card-photo">
-            <img src="images/rooftop-terrace.jpg" alt="Private Rooftop Terrace">
-            <span class="room-level-badge">Rooftop</span>
-          </div>
-          <div class="room-card-info">
-            <h3>Private Rooftop Terrace</h3>
-            <p>Exclusive to your apartment · Dining table &amp; lounge seating · 360° panorama of Mediterranean Sea and Besparmak Mountains · Perfect for sunrise, sundowners &amp; stargazing</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ AMENITIES ════════ -->
-  <section id="amenities" class="amenities">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Amenities</span>
-        <h2 class="section-title">Everything You<br><em>Need to Unwind</em></h2>
-      </div>
-
-      <div class="amenities-grid">
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-          </div>
-          <span class="amenity-name">High-Speed WiFi</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Yoga / wellness -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="4" r="2"/><path d="M8 22l1-6-3-3 4-4 2 3 2-3 4 4-3 3 1 6"/><line x1="5" y1="13" x2="3" y2="15"/><line x1="19" y1="13" x2="21" y2="15"/></svg>
-          </div>
-          <span class="amenity-name">Rooftop Yoga – Your Mat is Waiting</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Laptop / workspace -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="4" width="20" height="13" rx="2"/><line x1="1" y1="21" x2="23" y2="21"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="12" x2="12" y2="12"/></svg>
-          </div>
-          <span class="amenity-name">Workspace with Sea View</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Pool / waves -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 12c1.5 0 2.5-1 4-1s2.5 1 4 1 2.5-1 4-1 2.5 1 4 1"/><path d="M2 17c1.5 0 2.5-1 4-1s2.5 1 4 1 2.5-1 4-1 2.5 1 4 1"/><circle cx="12" cy="5" r="2"/><path d="M12 7v3l3 2"/></svg>
-          </div>
-          <span class="amenity-name">Resort Pool Complex</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Sun + terrace railing -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="6" r="2.5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="9" x2="12" y2="11"/><line x1="4.9" y1="4.9" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.1" y2="19.1"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.9" y1="19.1" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.1" y2="4.9"/><line x1="2" y1="22" x2="22" y2="22"/><line x1="5" y1="22" x2="5" y2="16"/><line x1="12" y1="22" x2="12" y2="16"/><line x1="19" y1="22" x2="19" y2="16"/></svg>
-          </div>
-          <span class="amenity-name">Private Rooftop Terrace</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Fork & knife -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="9" y1="2" x2="9" y2="22"/><path d="M6 2v7a3 3 0 003 3 3 3 0 003-3V2"/><line x1="17" y1="2" x2="17" y2="9"/><path d="M14 9a3 3 0 006 0V2"/><line x1="17" y1="12" x2="17" y2="22"/></svg>
-          </div>
-          <span class="amenity-name">Fully Equipped Kitchen</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Wind / AC -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9.59 4.59A2 2 0 1111 8H2"/><path d="M10.36 16.37A2 2 0 1013 20H2"/><path d="M14.73 8.27A2.5 2.5 0 1117.5 13H2"/></svg>
-          </div>
-          <span class="amenity-name">Air Conditioning</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Flame / BBQ -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/></svg>
-          </div>
-          <span class="amenity-name">BBQ & Outdoor Dining</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- TV / monitor -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <span class="amenity-name">Smart TV & Streaming</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Mountains -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polygon points="3 20 12 4 21 20"/><path d="M3 20l5.5-7 3.5 4.5 2.5-3.5 6 6"/></svg>
-          </div>
-          <span class="amenity-name">Panoramic Sea &amp; Mountain Views</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Car / parking -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <span class="amenity-name">Free Parking</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Washing machine -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="12" cy="13" r="4"/><line x1="7" y1="7" x2="7.01" y2="7"/><line x1="10" y1="7" x2="10.01" y2="7"/></svg>
-          </div>
-          <span class="amenity-name">Washing Machine</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Beach umbrella / sun + waves -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M23 12a11.05 11.05 0 00-22 0"/><line x1="12" y1="12" x2="12" y2="20"/><line x1="9" y1="20" x2="15" y2="20"/></svg>
-          </div>
-          <span class="amenity-name">Beach Towels Provided</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Airplane -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.1z"/></svg>
-          </div>
-          <span class="amenity-name">Airport Transfer Available</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Self check-in / key -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
-          </div>
-          <span class="amenity-name">Self Check-in · Arrival 24/7</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Car rental -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><line x1="9" y1="7" x2="13" y2="7"/></svg>
-          </div>
-          <span class="amenity-name">Car Rental Assistance</span>
-        </div>
-
-        <div class="amenity-item reveal">
-          <div class="amenity-icon">
-            <!-- Iron / ironing board -->
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 17h13a4 4 0 004-4V9H3v8z"/><path d="M3 9V7a2 2 0 012-2h10l4 4"/><line x1="3" y1="20" x2="21" y2="20"/></svg>
-          </div>
-          <span class="amenity-name">Iron, Ironing Board &amp; Hair Dryer</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ REGION ═══════════ -->
-  <section id="region" class="region">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Location</span>
-        <h2 class="section-title">Discover<br><em>the Region</em></h2>
-        <p class="section-subtitle">Cove Garden sits at the heart of North Cyprus's most beautiful coastal corridor — where history, nature, and Mediterranean life converge.</p>
-      </div>
-
-      <div class="region-grid">
-
-        <div class="region-card reveal">
-          <div class="region-card-photo-split">
-            <img src="images/girne-alley.jpg" alt="Bougainvillea alley in Girne" style="width:50%;height:100%;object-fit:cover;object-position:center;">
-            <img src="images/girne-pastry.jpg" alt="Fresh pastries in Girne café" style="width:50%;height:100%;object-fit:cover;object-position:center;">
-          </div>
-          <div class="region-card-body">
-            <div class="region-distance">~ 25 km West</div>
-            <h3 class="region-name">Girne <span>(Kyrenia)</span></h3>
-            <p class="region-desc">One of the Mediterranean's most enchanting harbour towns. Its medieval castle, crescent-shaped old harbour, and clifftop restaurants make Girne the beating heart of North Cyprus culture and nightlife.</p>
-            <ul class="region-highlights">
-              <li>Kyrenia Castle &amp; Shipwreck Museum</li>
-              <li>Old Venetian Harbour</li>
-              <li>Bellapais Abbey (12th century)</li>
-              <li>Boutique shops &amp; waterfront dining</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="region-card reveal">
-          <div class="region-card-photo" style="height:240px;overflow:hidden;border-radius:var(--radius-md) var(--radius-md) 0 0;">
-            <img src="images/esentepe-village.jpg" alt="Esentepe Village" style="width:100%;height:100%;object-fit:cover;object-position:center center;">
-          </div>
-          <div class="region-card-body">
-            <div class="region-distance">Your Home Base</div>
-            <h3 class="region-name">Esentepe</h3>
-            <p class="region-desc">A peaceful village draped in olive groves and citrus trees, facing the open sea. Here, life moves to a slower rhythm. Cove Garden is nestled in this village — steps from the sea and the championship Korineum Golf Course, with Golden Beach on the Karpaz Peninsula within easy reach.</p>
-            <ul class="region-highlights">
-              <li>Golden Beach · Karpaz Peninsula</li>
-              <li>Korineum Golf &amp; Beach Resort</li>
-              <li>Traditional village atmosphere</li>
-              <li>Crystal-clear snorkelling waters</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="region-card reveal">
-          <div class="region-card-photo" style="height:240px;overflow:hidden;border-radius:var(--radius-md) var(--radius-md) 0 0;">
-            <img src="images/sunvalley-sunset.jpg" alt="Sun Valley sunset view" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;">
-          </div>
-          <div class="region-card-body">
-            <div class="region-distance">~ 5 km East</div>
-            <h3 class="region-name">Bahçeli</h3>
-            <p class="region-desc">Nestled at the foot of the Besparmak Mountains, Bahçeli is a tranquil village with sweeping views across the sea to Turkey's distant coastline. The perfect base for mountain hikes and sunset watching.</p>
-            <ul class="region-highlights">
-              <li>Panoramic sea &amp; mountain views</li>
-              <li>Besparmak (Five Finger) Mountains</li>
-              <li>Peaceful village taverns</li>
-              <li>Unspoiled coastal walking paths</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ EXPERIENCES ══════ -->
-  <section id="experiences" class="experiences">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Experiences</span>
-        <h2 class="section-title">What Awaits<br><em>You Here</em></h2>
-        <p class="section-subtitle">North Cyprus is an island of extraordinary contrasts — ancient and modern, rugged and serene, wild and welcoming.</p>
-      </div>
-
-      <div class="experiences-grid">
-
-        <div class="exp-card reveal">
-          <div class="exp-card-top exp-card-top-split">
-            <img src="images/beach-sand.jpg" alt="North Cyprus sandy beach" class="exp-split-photo" style="object-position: center 65%;">
-            <img src="images/coast-cliffs.jpg" alt="North Cyprus dramatic coastline" class="exp-split-photo" style="object-position: center 25%;">
-          </div>
-          <div class="exp-card-body">
-            <h3>Beaches &amp; Coast</h3>
-            <p>Swim in water so clear you can count the pebbles below. The North Cyprus coastline remains one of the Mediterranean's best-kept secrets — uncrowded, pristine, and breathtakingly blue.</p>
-            <span class="exp-tag">Golden Beach · Karpaz</span>
-            <span class="exp-tag">Snorkelling</span>
-            <span class="exp-tag">Sailing from Girne</span>
-          </div>
-        </div>
-
-        <div class="exp-card reveal">
-          <div class="exp-card-top ph-olive-gradient">
-            <div class="exp-icon">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-          </div>
-          <div class="exp-card-body">
-            <h3>Golf at Korineum</h3>
-            <p>Play one of the finest golf courses in the Eastern Mediterranean. Korineum Golf &amp; Beach Resort combines championship-standard greens with stunning sea and mountain backdrops.</p>
-            <span class="exp-tag">18-Hole Course</span>
-            <span class="exp-tag">Sea Views</span>
-            <span class="exp-tag">Club Rental Available</span>
-          </div>
-        </div>
-
-        <div class="exp-card reveal">
-          <div class="exp-card-top" style="position:relative;overflow:hidden;background:#2a3d1a;height:220px;">
-            <img src="images/besparmak-mountains.jpg" alt="Besparmak Mountains – Five Finger Mountains North Cyprus" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;">
-          </div>
-          <div class="exp-card-body">
-            <h3>Besparmak Mountains</h3>
-            <p>The Five Finger Mountains tower dramatically above the coast. Hike through pine forests, encounter rare wildlife, and enjoy panoramic views stretching from Cyprus to Turkey from the ridge trails.</p>
-            <span class="exp-tag">Hiking Trails</span>
-            <span class="exp-tag">Birdwatching</span>
-            <span class="exp-tag">Panoramic Views</span>
-          </div>
-        </div>
-
-        <div class="exp-card reveal">
-          <div class="exp-card-top" style="position:relative;overflow:hidden;background:#3d2a1a;height:220px;">
-            <img src="images/ancient-history.jpg" alt="Ancient history – castles and ruins of North Cyprus" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;">
-          </div>
-          <div class="exp-card-body">
-            <h3>Ancient History</h3>
-            <p>Step into a living history book. St. Hilarion Castle perches on a clifftop like something from a fairy tale. Bellapais Abbey stands in Gothic perfection. Kyrenia Castle guards a harbour unchanged for centuries.</p>
-            <span class="exp-tag">St. Hilarion Castle</span>
-            <span class="exp-tag">Bellapais Abbey</span>
-            <span class="exp-tag">Kyrenia Castle</span>
-          </div>
-        </div>
-
-        <div class="exp-card reveal">
-          <div class="exp-card-top" style="position:relative;overflow:hidden;background:#0a2a40;height:220px;">
-            <img src="images/girne-harbour.jpg" alt="Girne old harbour with boats and dining" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;">
-          </div>
-          <div class="exp-card-body">
-            <h3>Girne Harbour Life</h3>
-            <p>Spend an evening at the legendary old harbour of Kyrenia — fishing boats bob at anchor, restaurants spill out onto the quay, and the castle walls glow amber in the lamplight. Pure Mediterranean magic.</p>
-            <span class="exp-tag">Boat Trips</span>
-            <span class="exp-tag">Waterfront Dining</span>
-            <span class="exp-tag">Sunset Watching</span>
-          </div>
-        </div>
-
-        <div class="exp-card reveal">
-          <div class="exp-card-top" style="position:relative;overflow:hidden;background:#3d1a0a;height:220px;">
-            <img src="images/food-local.jpg" alt="Local Cypriot cuisine" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;object-position:center 40%;">
-          </div>
-          <div class="exp-card-body">
-            <h3>Cypriot Cuisine</h3>
-            <p>Discover the rich flavours of Turkish Cypriot meze — shared plates of halloumi, olives, fresh seafood, stuffed vine leaves, and slow-cooked meats, washed down with local wine or the legendary Cypriot spirit, zivania.</p>
-            <span class="exp-tag">Meze &amp; Mezze</span>
-            <span class="exp-tag">Fresh Seafood</span>
-            <span class="exp-tag">Local Wines</span>
-          </div>
-        </div>
-
-        <div class="exp-card exp-card-featured reveal">
-          <div class="exp-card-top" style="position:relative;overflow:hidden;background:#2d5a27;">
-            <img src="images/karpaz-donkey.jpg" alt="Wild donkey on Karpaz beach" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;object-position:center 40%;">
-            <div class="exp-icon" style="position:relative;z-index:1;">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 17l3-8 3 5 3-3 3 6"/><circle cx="19" cy="6" r="2"/><path d="M2 20h20"/></svg>
-            </div>
-            <div class="exp-featured-label" style="position:relative;z-index:1;">Day Trip Highlight</div>
-          </div>
-          <div class="exp-card-body">
-            <h3>Karpaz Peninsula &amp; the Wild Donkeys</h3>
-            <p>Drive to the untamed tip of Cyprus — the Karpaz (Karpas) Peninsula, a UNESCO-protected strip of wild land reaching into the sea between Turkey and Syria. Here, herds of wild donkeys roam freely along golden beaches and ancient ruins, utterly indifferent to the 21st century. A day trip like no other.</p>
-            <span class="exp-tag">Wild Donkeys</span>
-            <span class="exp-tag">Golden Sand Beaches</span>
-            <span class="exp-tag">Apostolos Andreas Monastery</span>
-            <span class="exp-tag">~1.5h Drive</span>
-          </div>
-        </div>
-
-        <!-- Cafe Paris -->
-        <div class="exp-card exp-card-featured exp-card-cafe reveal">
-          <div class="exp-card-top exp-cafe-grid">
-            <img src="images/cafe-paris-sign.jpg" alt="Cafe Paris entrance sign" class="exp-cafe-photo exp-cafe-large">
-            <img src="images/cafe-paris-terrace.jpg" alt="Cafe Paris terrace sea view" class="exp-cafe-photo">
-            <img src="images/cafe-paris.jpg" alt="Cafe Paris coffee and pastry" class="exp-cafe-photo">
-          </div>
-          <div class="exp-card-body">
-            <h3>Cafe Paris</h3>
-            <p>One of the coast's most beloved spots — Cafe Paris combines a sun-drenched terrace with sweeping sea views, freshly baked pastries, iced coffees, and homemade cakes. A short drive from the apartment, it's the perfect breakfast stop or afternoon retreat.</p>
-            <span class="exp-tag">Iced Coffee &amp; Tea</span>
-            <span class="exp-tag">Homemade Pastries</span>
-            <span class="exp-tag">Sea View Terrace</span>
-            <span class="exp-tag">Nearby</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ RESORT AMENITIES ═ -->
-  <section id="resort" class="resort-amenities">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">On-Site &amp; Nearby</span>
-        <h2 class="section-title">More to Enjoy<br><em>Right Here</em></h2>
-        <p class="section-subtitle">Beyond the apartment itself, the resort and surrounding area offer everything you need — relaxation, wellness, and good coffee, steps from your door.</p>
-      </div>
-
-      <div class="resort-grid">
-
-        <!-- Cafe -->
-        <div class="resort-card resort-card-h reveal">
-          <div class="resort-card-image">
-            <img src="images/cafe-resort.jpg" alt="Resort Café mit Lagoon-Blick" style="object-position: center top;">
-          </div>
-          <div class="resort-card-body">
-            <div class="resort-badge">In the Complex</div>
-            <h3>The Resort Café</h3>
-            <p>Start your morning right at the café in our resort complex — freshly brewed coffee, light breakfast options, and snacks served with a side of pool views. The perfect place to ease into your day before heading to the beach.</p>
-            <ul class="resort-highlights">
-              <li>Freshly brewed coffee &amp; teas</li>
-              <li>Light meals &amp; snacks</li>
-              <li>Pool-side seating</li>
-              <li>Open daily</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Heart Center Wellness -->
-        <div class="resort-card resort-card-h reveal">
-          <div class="resort-card-image">
-            <img src="images/heart-center.jpg" alt="Heart Center Wellness Spa Pool" style="object-position: center top;">
-          </div>
-          <div class="resort-card-body">
-            <div class="resort-badge nearby">Nearby · on Charge</div>
-            <h3>Heart Center Wellness</h3>
-            <p>Just a short distance away, the Heart Center is a full-service wellness facility available to guests for an additional fee. Whether you're looking to stay active or deeply unwind, everything is here — from modern gym equipment to relaxing spa treatments.</p>
-            <ul class="resort-highlights">
-              <li>Fitness &amp; gym equipment</li>
-              <li>Sauna &amp; steam room</li>
-              <li>Professional massages</li>
-              <li>Additional charge applies</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Cabanas -->
-        <div class="resort-card resort-card-h reveal">
-          <div class="resort-card-image resort-card-image-split">
-            <img src="images/resort-cabanas.jpg" alt="Resort pool cabanas">
-            <img src="images/cabana-sunset.jpg" alt="Cabana at sunset by pool">
-          </div>
-          <div class="resort-card-body">
-            <div class="resort-badge">In the Complex</div>
-            <h3>Pool Cabanas</h3>
-            <p>Unwind in style at one of the resort's elegant white cabanas — draped canopies, private loungers, and the shimmering pool right in front of you. The perfect spot to spend a lazy afternoon between swims.</p>
-            <ul class="resort-highlights">
-              <li>Private curtained cabanas</li>
-              <li>Loungers &amp; shade included</li>
-              <li>Poolside location</li>
-              <li>Available to resort guests</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Resort Grounds -->
-        <div class="resort-card resort-card-h reveal">
-          <div class="resort-card-image resort-card-image-split">
-            <img src="images/lagoon-clear.jpg" alt="Resort crystal clear lagoon pool">
-            <img src="images/resort-chess.jpg" alt="Resort garden with giant chess">
-          </div>
-          <div class="resort-card-body">
-            <div class="resort-badge">In the Complex</div>
-            <h3>Resort Grounds</h3>
-            <p>The resort complex is beautifully landscaped — from the crystal-clear lagoon pool stretching out to the horizon, to the manicured garden with a life-size chess set surrounded by colourful flowers. There is always something to discover on the grounds.</p>
-            <ul class="resort-highlights">
-              <li>Crystal-clear lagoon pool</li>
-              <li>Landscaped gardens</li>
-              <li>Giant outdoor chess set</li>
-              <li>Sunbeds &amp; lawn areas</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Parking -->
-        <div class="resort-card resort-card-h reveal">
-          <div class="resort-card-image">
-            <img src="images/complex-exterior.jpg" alt="Resort complex with parking">
-          </div>
-          <div class="resort-card-body">
-            <div class="resort-badge">In the Complex</div>
-            <h3>Free Parking</h3>
-            <p>The complex offers dedicated free parking directly on site — no searching for a space, no additional fees. Simply arrive, park, and start your holiday. Ideal for guests who hire a car to explore the region.</p>
-            <ul class="resort-highlights">
-              <li>Free dedicated parking</li>
-              <li>On-site, steps from the apartment</li>
-              <li>Ideal for rental cars</li>
-              <li>Secure complex</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ REVIEWS ══════════ -->
-  <section id="reviews" class="reviews">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Guest Reviews</span>
-        <h2 class="section-title">Words from<br><em>Our Guests</em></h2>
-      </div>
-
-      <div class="reviews-grid">
-
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <blockquote class="review-text">"An absolutely magical week. The duplex loft apartment exceeded all our expectations — the views from the rooftop terrace are unlike anything we've ever seen. North Cyprus itself was a revelation. We'll be back."</blockquote>
-          <div class="review-author">
-            <div class="review-avatar">S</div>
-            <div>
-              <span class="review-name">Sarah M.</span>
-              <span class="review-origin">Frankfurt, Germany</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <blockquote class="review-text">"Cove Garden is everything a family holiday should be. The kids loved the pool, we loved the quiet evenings on the terrace. Esentepe is a hidden gem — peaceful, beautiful, and completely unspoiled."</blockquote>
-          <div class="review-author">
-            <div class="review-avatar">J</div>
-            <div>
-              <span class="review-name">James &amp; Lisa T.</span>
-              <span class="review-origin">London, United Kingdom</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <blockquote class="review-text">"We've been to many places in the Mediterranean, but North Cyprus surprised us completely. The loft apartment is beautifully appointed and the region has so much to offer — history, beaches, amazing food. Truly special."</blockquote>
-          <div class="review-author">
-            <div class="review-avatar">H</div>
-            <div>
-              <span class="review-name">Helena V.</span>
-              <span class="review-origin">Amsterdam, Netherlands</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ MORE APARTMENTS ══ -->
-  <div class="more-apartments-banner">
-    <div class="container">
-      <div class="more-apts-inner reveal">
-        <div class="more-apts-text">
-          <span class="section-label" style="color:rgba(255,255,255,0.5);">Also Available</span>
-          <h3>More Apartments in the Complex</h3>
-          <p>We have additional apartments available for rent in the same resort — each with its own unique layout, view, and character. Whether you're travelling as a large group or seeking a different floor plan, we can find the right fit for you.</p>
-        </div>
-        <a href="#booking" class="btn-primary">Enquire About More Options</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════ BOOKING ══════════ -->
-  <section id="booking" class="booking">
-    <div class="container">
-      <div class="booking-inner">
-
-        <div class="booking-text reveal">
-          <span class="section-label light">Enquiries</span>
-          <h2 class="section-title light">Plan Your<br><em>Mediterranean Stay</em></h2>
-          <p class="booking-desc">We'd love to welcome you to Cove Garden. Fill in your details and we'll get back to you within 24 hours with availability, rates, and everything you need to know.</p>
-          <div class="booking-contact">
-            <div class="contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
-              <span>info@terzle.com</span>
-            </div>
-            <div class="contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg>
-              <span>+90 XXX XXX XXXX</span>
-            </div>
-          </div>
-
-          <div class="booking-arrival-info">
-            <h4>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;margin-right:6px;"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.1z"/></svg>
-              How to Get Here
-            </h4>
-            <ul>
-              <li><strong>Ercan Airport (ECN)</strong> — North Cyprus · ~1 h drive · direct entry, no border crossing</li>
-              <li><strong>Larnaca Airport (LCA)</strong> — South Cyprus · ~1.5 h drive · cross the border at Metehan/Bosphorus checkpoint</li>
-            </ul>
-            <p class="arrival-tip">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;margin-right:5px;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              We recommend hiring a car — we're happy to assist. If arriving via Larnaca, additional border insurance is required (approx. €35 / month), available at the crossing.
-            </p>
-          </div>
-        </div>
-
-        <div class="booking-form-wrapper reveal">
-          <form class="booking-form" id="bookingForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="arrival">Arrival Date</label>
-                <input type="date" id="arrival" name="arrival" required>
-              </div>
-              <div class="form-group">
-                <label for="departure">Departure Date</label>
-                <input type="date" id="departure" name="departure" required>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="guests">Number of Guests</label>
-                <select id="guests" name="guests" required>
-                  <option value="">Select guests</option>
-                  <option value="1-2">1–2 guests</option>
-                  <option value="3-4">3–4 guests</option>
-                  <option value="5-6">5–6 guests</option>
-                  <option value="7-8">7–8 guests</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us about your trip — any questions, special requests, or things we should know..."></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit">Send Enquiry</button>
-
-            <div class="form-success" id="formSuccess" aria-live="polite">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Thank you! We'll be in touch within 24 hours.
-            </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ FOOTER ═══════════ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-
-        <div class="footer-brand">
-          <a href="#hero" class="footer-logo">
-            <svg class="logo-mark" width="26" height="26" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="13" r="5.5" stroke="currentColor" stroke-width="2" fill="none"/>
-              <line x1="18" y1="3" x2="18" y2="5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <line x1="27.5" y1="13" x2="25" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <line x1="8.5" y1="13" x2="11" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <line x1="25" y1="6" x2="23.1" y2="7.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <line x1="11" y1="6" x2="12.9" y2="7.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M3 25 Q7.5 22 12 25 Q16.5 28 21 25 Q25.5 22 33 25" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M3 30 Q7.5 27 12 30 Q16.5 33 21 30 Q25.5 27 33 30" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
-            </svg>
-            <span class="logo-text"><span class="logo-word-light">Holiday</span> <span class="logo-word-bold">Rent</span></span>
-          </a>
-          <p class="footer-tagline">Where Mountains Meet the Mediterranean</p>
-          <p class="footer-location">Esentepe · North Cyprus</p>
-        </div>
-
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#about">The Apartment</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#amenities">Amenities</a></li>
-            <li><a href="#region">The Region</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#resort">Café &amp; Wellness</a></li>
-            <li><a href="#booking">Book a Stay</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p>info@terzle.com</p>
-          <p>+90 XXX XXX XXXX</p>
-          <p>Esentepe Village<br>Girne District<br>North Cyprus</p>
-        </div>
-
-        <div class="footer-nearby">
-          <h4>Nearby</h4>
-          <ul>
-            <li>Girne (Kyrenia) – 25 km</li>
-            <li>Ercan Airport – 55 km</li>
-            <li>Korineum Golf – 3 km</li>
-            <li>Esentepe Beach – 1 km</li>
-            <li>St. Hilarion Castle – 30 km</li>
-            <li>Bellapais Abbey – 20 km</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 Cove Garden North Cyprus. All rights reserved.</p>
-        <p class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <span>·</span>
-          <a href="#">Terms & Conditions</a>
+  <header id="home" class="hero">
+    <div class="hero-bg-shape hero-bg-shape-a"></div>
+    <div class="hero-bg-shape hero-bg-shape-b"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Global Service fuer Premium und kleine Betreiber</p>
+        <h1>Ihre Ferienwohnung verdient ein eigenes digitales Betriebssystem.</h1>
+        <p class="hero-lead">
+          Wir entwickeln fuer jede Unterkunft eine individuelle App, eine starke Website, ein eigenes Logo und uebernehmen auf Wunsch die komplette Vermarktung.
+          Von Boutique-Villen bis 1-3 Apartments: Gaeste erhalten Antworten auf wiederkehrende Fragen per Video, Foto und klaren Schritt-fuer-Schritt-Erklaerungen.
         </p>
+        <div class="hero-actions">
+          <a href="#segments" class="btn btn-primary">Angebot nach Zielgruppe</a>
+          <a href="#app" class="btn btn-ghost">App-Beispiele ansehen</a>
+        </div>
+        <div class="hero-kpis">
+          <div>
+            <strong class="counter" data-target="72">0</strong>
+            <span>Weniger Standard-Rueckfragen</span>
+          </div>
+          <div>
+            <strong class="counter" data-target="18">0</strong>
+            <span>Mehr Direktbuchungen im Schnitt</span>
+          </div>
+          <div>
+            <strong class="counter" data-target="24">0</strong>
+            <span>Support in Stunden, nicht Tagen</span>
+          </div>
+        </div>
       </div>
+
+      <div class="hero-media reveal">
+        <div class="hero-card hero-card-main">
+          <img src="images/living-room.jpg" alt="Moderne Ferienwohnung als Beispiel fuer Vermieter-Service">
+          <div class="hero-card-label">
+            <span>Produktbeispiel</span>
+            <strong>Individuelle Gastgeber-App</strong>
+          </div>
+        </div>
+        <div class="hero-card hero-card-small">
+          <img src="images/workspace-sea-view.jpg" alt="Digitales Management und Kommunikation fuer Ferienwohnungen">
+        </div>
+        <div class="hero-card hero-card-small">
+          <img src="images/rooftop-terrace.jpg" alt="Ansprechende Bildwelt fuer Marketing und Website">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="pain-points">
+    <div class="container pain-grid reveal">
+      <article>
+        <h3>Immer die gleichen Gaestefragen?</h3>
+        <p>WLAN-Passwort, Check-out, Klima, Parkplatz: Wir bauen daraus ein smartes Hilfe-Center in Ihrer App.</p>
+      </article>
+      <article>
+        <h3>Zu viele Plattformen, zu wenig Zeit?</h3>
+        <p>Wir strukturieren Kommunikation, Aufgaben und Marketing in einem klaren System, damit Ihr Betrieb ruhig und planbar laeuft.</p>
+      </article>
+      <article>
+        <h3>Keine unverwechselbare Marke?</h3>
+        <p>Logo, Bildstil, Website und Texte werden auf Ihre Unterkunft zugeschnitten, damit Sie professionell auftreten.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="segments" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Zielgruppen-Fokus</p>
+        <h2>Passend fuer Premium-Haeuser und kleine Betreiber.</h2>
+      </div>
+      <div class="pricing-grid">
+        <article class="price-card reveal">
+          <h3>Premium Betreiber</h3>
+          <p class="price-note">Boutique-Villen, Design-Apartments, High-End Gaeste</p>
+          <ul>
+            <li>Premium Markenauftritt mit individuellem Logo</li>
+            <li>Concierge-Stil Kommunikation und Upsell-Services</li>
+            <li>Hochwertige Website mit Direktbuchungsfokus</li>
+            <li>Content und Marketing fuer anspruchsvolle Zielgruppen</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary segment-cta" data-interest="Premium Beratung">Premium Beratung anfragen</a>
+        </article>
+        <article class="price-card featured reveal">
+          <span class="badge">Flexibel</span>
+          <h3>Kleine Betreiber</h3>
+          <p class="price-note">1-3 Ferienwohnungen, schlanke Prozesse, wenig Zeit</p>
+          <ul>
+            <li>Einfach startende App mit klaren FAQ-Modulen</li>
+            <li>Selbstpflege ohne technische Huerden</li>
+            <li>Automatisierte Standardnachrichten fuer Gaeste</li>
+            <li>Kosteneffiziente Vermarktung mit Fokus auf Auslastung</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary segment-cta" data-interest="Starter-Paket">Starter-Paket anfragen</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Unsere Leistungen</p>
+        <h2>Alles, was Vermietern den Alltag leichter macht.</h2>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <h3>Individuelle Gastgeber-App</h3>
+          <p>Pro Unterkunft eine eigene App mit Design, Struktur und Inhalten passend zu Ihrem Objekt und Ihrem Stil.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>FAQ per Video & Foto</h3>
+          <p>Wiederkehrende Fragen beantworten wir mit kurzen Videos, bebilderten Schritten und klaren Texten direkt in der App.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Selbstpflege durch Sie</h3>
+          <p>Sie koennen Inhalte, Preise, Hinweise und Infos selbst aktualisieren, ohne Entwickler oder lange Wartezeit.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Automatisierte Kommunikation</h3>
+          <p>Vor Anreise, waehrend des Aufenthalts und nach Abreise: Nachrichten-Vorlagen, Reminder und Feedback-Prozesse.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Housekeeping-Workflows</h3>
+          <p>Reinigung, Waesche, Verbrauchsmaterial und Schadensmeldungen in einem klaren Ablauf fuer Sie und Ihr Team.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Individuelle Logos</h3>
+          <p>Jede Ferienwohnung bekommt auf Wunsch ein eigenes Logo und visuelle Identitaet fuer mehr Wiedererkennung.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Webseiten fuer Vermieter</h3>
+          <p>Wir entwickeln schnelle, moderne Webseiten fuer Direktbuchungen, bessere Sichtbarkeit und weniger Plattformabhaengigkeit.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Marketing als Service</h3>
+          <p>Listing-Optimierung, Kampagnen, Content und Auswertung, damit Ihre Auslastung stabil und profitabel waechst.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="app" class="section app-showcase">
+    <div class="container app-grid">
+      <div class="app-copy reveal">
+        <p class="eyebrow">App-Beispiel</p>
+        <h2>So kann Ihre individuelle Ferienwohnungs-App aussehen.</h2>
+        <p>
+          Das App-Konzept ist modular: Sie starten mit den wichtigsten Bausteinen und erweitern spaeter nach Bedarf.
+          Jeder Screen ist auf Ihre gaengigen Gaestefragen abgestimmt.
+        </p>
+
+        <div class="app-tabs" role="tablist" aria-label="App Module">
+          <button class="tab-btn active" data-screen="screen-guide">Anreise Guide</button>
+          <button class="tab-btn" data-screen="screen-faq">FAQ Video Hub</button>
+          <button class="tab-btn" data-screen="screen-service">Service & Meldungen</button>
+        </div>
+
+        <ul class="app-benefits">
+          <li>Weniger Nachrichtenchaos bei Check-in und Check-out.</li>
+          <li>Gaeste finden Antworten selbst, rund um die Uhr.</li>
+          <li>Ihre Teams wissen sofort, was wann zu tun ist.</li>
+        </ul>
+      </div>
+
+      <div class="app-phone reveal">
+        <div class="phone-shell">
+          <div id="screen-guide" class="phone-screen active">
+            <h3>Willkommen in Ihrer Unterkunft</h3>
+            <p>Schritt 1: Video zur Anreise ansehen.</p>
+            <p>Schritt 2: Schluesselbox-Code und Foto-Hinweise oeffnen.</p>
+            <p>Schritt 3: WLAN und Hausregeln in 90 Sekunden pruefen.</p>
+          </div>
+          <div id="screen-faq" class="phone-screen">
+            <h3>Haeufige Fragen</h3>
+            <p>Wie bediene ich die Klimaanlage?</p>
+            <p>Wo finde ich den Parkplatz?</p>
+            <p>Wann ist Spaet-Check-out moeglich?</p>
+            <p>Alle Antworten als Video, Fotos und klare Kurztexte.</p>
+          </div>
+          <div id="screen-service" class="phone-screen">
+            <h3>Service direkt melden</h3>
+            <p>Defekt melden mit Foto in unter 30 Sekunden.</p>
+            <p>Extra Service buchen: Babybett, Spaet-Check-out, Transfer.</p>
+            <p>Statusupdates automatisch an Gast und Team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section visual-band">
+    <div class="container band-grid">
+      <img class="reveal" src="images/interior-night.jpg" alt="Atmosphaerische Ferienwohnung fuer digitales Marketing">
+      <img class="reveal" src="images/kitchen.jpg" alt="Detailaufnahme als Beispiel fuer FAQ-Fotoinhalte">
+      <img class="reveal" src="images/master-bedroom.jpg" alt="Professionelle Bildwelt fuer Ferienwohnungs-Branding">
+    </div>
+  </section>
+
+  <section id="marketing" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Vermarktung</p>
+        <h2>Wir vermarkten Ihre Ferienimmobilie ganzheitlich.</h2>
+      </div>
+
+      <div class="marketing-grid">
+        <article class="marketing-card reveal">
+          <h3>Listing-Optimierung</h3>
+          <p>Starke Titel, bessere Beschreibungen, klare Vorteile und Bildreihenfolge mit Conversion-Fokus.</p>
+        </article>
+        <article class="marketing-card reveal">
+          <h3>Direktbuchungs-Strategie</h3>
+          <p>Eigene Website, Retargeting und klare Angebote, um mehr unabhaengige Buchungen zu gewinnen.</p>
+        </article>
+        <article class="marketing-card reveal">
+          <h3>Performance-Reporting</h3>
+          <p>Monatliche Kennzahlen zu Auslastung, Anfragen, Conversion und Verbesserungspotenzialen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="container contact-grid">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Sie wollen Ihre Ferienwohnung professionell digitalisieren?</h2>
+        <p>
+          Schreiben Sie uns kurz, ob Sie Premium-Angebote oder eine schlanke Loesung fuer wenige Wohnungen suchen.
+          Wir melden uns mit einem konkreten Vorschlag.
+        </p>
+        <div class="contact-quick-actions">
+          <button type="button" class="quick-select" data-interest="Premium Beratung">Ich suche Premium Beratung</button>
+          <button type="button" class="quick-select" data-interest="Starter-Paket">Ich bin kleiner Betreiber (1-3 Objekte)</button>
+        </div>
+        <p class="contact-meta">E-Mail: <a href="mailto:info@terzle.com">info@terzle.com</a></p>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/your_form_id" method="POST" data-endpoint="https://formspree.io/f/your_form_id">
+        <label for="interest">Ich interessiere mich fuer</label>
+        <select id="interest" name="interest" required>
+          <option value="" selected disabled>Bitte waehlen</option>
+          <option value="Premium Beratung">Premium Beratung</option>
+          <option value="Starter-Paket">Starter-Paket fuer kleine Betreiber</option>
+        </select>
+        <input id="subject" name="subject" type="hidden" value="Allgemeine Anfrage | Ferienwohnungs-Service">
+        <input id="providerSubject" name="_subject" type="hidden" value="Allgemeine Anfrage | Ferienwohnungs-Service">
+        <p id="subjectPreview" class="subject-preview">Betreff: Allgemeine Anfrage | Ferienwohnungs-Service</p>
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">E-Mail</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="units">Anzahl Ferienwohnungen</label>
+        <input id="units" name="units" type="text" placeholder="z. B. 1, 4 oder 12">
+
+        <label for="message">Wobei sollen wir Sie entlasten?</label>
+        <textarea id="message" name="message" rows="5" placeholder="App, Website, Logo, Vermarktung, Kommunikation, Housekeeping..."></textarea>
+
+        <button type="submit" class="btn btn-primary">Unverbindlich anfragen</button>
+        <p id="formMessage" class="form-message" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <div class="mobile-sticky-cta" aria-label="Schnellkontakt">
+    <a href="#contact" class="btn btn-primary">Kostenloses Strategiegespraech</a>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>TERZLE Studio | Digitale Services fuer Ferienwohnungs-Betreiber weltweit</p>
+      <a href="mailto:info@terzle.com">info@terzle.com</a>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
-</html>      
+</html>

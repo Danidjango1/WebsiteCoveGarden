@@ -1,222 +1,256 @@
-/* ═══════════════════════════════════════════════════════════════
-   COVE GARDEN – script.js
-   Navigation · Scroll Animations · Mobile Menu · Form
-   ═══════════════════════════════════════════════════════════════ */
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.getElementById("navbar");
+  const navToggle = document.querySelector(".nav-toggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const navLinks = document.querySelectorAll(".nav-links a, .mobile-menu a");
+  const desktopLinks = document.querySelectorAll(".nav-links a");
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ── STICKY NAVIGATION ───────────────────────────────────────── */
-  const navbar = document.getElementById('navbar');
-
-  function updateNav() {
-    if (window.scrollY > 60) {
-      navbar.classList.add('scrolled');
-      navbar.classList.remove('transparent');
+  const updateNav = () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add("scrolled");
     } else {
-      navbar.classList.remove('scrolled');
-      navbar.classList.add('transparent');
+      navbar.classList.remove("scrolled");
     }
-  }
+  };
 
-  // Initial state
-  navbar.classList.add('transparent');
-  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+  window.addEventListener("scroll", updateNav, { passive: true });
 
-
-  /* ── IMAGE LOADING OPTIMIZATION ─────────────────────────────── */
-  const firstHeroImage = document.querySelector('.hero-carousel-card img');
-  if (firstHeroImage) {
-    firstHeroImage.loading = 'eager';
-    firstHeroImage.decoding = 'async';
-    firstHeroImage.fetchPriority = 'high';
-  }
-
-  // Lazy-load all remaining images to reduce initial mobile payload.
-  document.querySelectorAll('img').forEach((img) => {
-    if (img === firstHeroImage) return;
-    if (!img.hasAttribute('loading')) img.loading = 'lazy';
-    if (!img.hasAttribute('decoding')) img.decoding = 'async';
-    if (!img.hasAttribute('fetchpriority')) img.fetchPriority = 'low';
-  });
-
-
-  /* ── MOBILE MENU ─────────────────────────────────────────────── */
-  const navToggle = document.querySelector('.nav-toggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  navToggle.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.contains('open');
-    mobileMenu.classList.toggle('open');
-    navToggle.classList.toggle('active');
-    navToggle.setAttribute('aria-expanded', String(!isOpen));
-  });
-
-  // Close mobile menu when a link is clicked
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      navToggle.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener("click", () => {
+      const open = mobileMenu.classList.toggle("open");
+      navToggle.classList.toggle("active", open);
+      navToggle.setAttribute("aria-expanded", String(open));
     });
-  });
+  }
 
-  // Close mobile menu on outside click
-  document.addEventListener('click', (e) => {
-    if (!navbar.contains(e.target)) {
-      mobileMenu.classList.remove('open');
-      navToggle.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
 
-
-  /* ── SMOOTH SCROLL ───────────────────────────────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const targetId = anchor.getAttribute('href');
-      if (targetId === '#') return;
-
-      const target = document.querySelector(targetId);
+      const target = document.querySelector(href);
       if (!target) return;
 
-      e.preventDefault();
+      event.preventDefault();
+      const navOffset = navbar ? navbar.offsetHeight : 0;
+      const y = target.getBoundingClientRect().top + window.scrollY - navOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
 
-      const navH = navbar.offsetHeight;
-      const targetY = target.getBoundingClientRect().top + window.scrollY - navH;
-
-      window.scrollTo({ top: targetY, behavior: 'smooth' });
+      if (mobileMenu && navToggle) {
+        mobileMenu.classList.remove("open");
+        navToggle.classList.remove("active");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
     });
   });
 
+  const sections = document.querySelectorAll("section[id], header[id]");
+  const activateLink = () => {
+    const scrollPosition = window.scrollY + (navbar ? navbar.offsetHeight : 0) + 20;
+    let activeId = "";
 
-  /* ── INTERSECTION OBSERVER – REVEAL ANIMATIONS ───────────────── */
-  const revealElements = document.querySelectorAll('.reveal');
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPosition >= top && scrollPosition < top + height) {
+        activeId = section.id;
+      }
+    });
 
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        // Stagger siblings within the same parent
-        const siblings = entry.target.parentElement.querySelectorAll('.reveal:not(.visible)');
-        let delay = 0;
-        siblings.forEach((sibling, idx) => {
-          if (sibling === entry.target) {
-            delay = idx * 80;
+    desktopLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      link.classList.toggle("active", href === `#${activeId}`);
+    });
+  };
+
+  activateLink();
+  window.addEventListener("scroll", activateLink, { passive: true });
+
+  const revealElements = document.querySelectorAll(".reveal");
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  revealElements.forEach((element) => revealObserver.observe(element));
+
+  const counters = document.querySelectorAll(".counter");
+  const animateCounter = (counter) => {
+    const target = Number(counter.dataset.target || 0);
+    const duration = 1200;
+    const start = performance.now();
+
+    const step = (time) => {
+      const progress = Math.min((time - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = `${Math.round(target * eased)}%`;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const counterObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.45 }
+  );
+
+  counters.forEach((counter) => counterObserver.observe(counter));
+
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const phoneScreens = document.querySelectorAll(".phone-screen");
+
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.dataset.screen;
+      tabButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      phoneScreens.forEach((screen) => {
+        screen.classList.toggle("active", screen.id === targetId);
+      });
+    });
+  });
+
+  const contactForm = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
+  const interestField = document.getElementById("interest");
+  const subjectField = document.getElementById("subject");
+  const providerSubjectField = document.getElementById("providerSubject");
+  const subjectPreview = document.getElementById("subjectPreview");
+  const messageField = document.getElementById("message");
+  const segmentCtas = document.querySelectorAll(".segment-cta");
+  const quickSelectButtons = document.querySelectorAll(".quick-select");
+
+  const getSubjectByInterest = (interest) => {
+    if (interest === "Premium Beratung") {
+      return "Premium Lead | Beratung App + Branding + Vermarktung";
+    }
+    if (interest === "Starter-Paket") {
+      return "Starter Lead | App + Automatisierung fuer kleine Betreiber";
+    }
+    return "Allgemeine Anfrage | Ferienwohnungs-Service";
+  };
+
+  const applyInterest = (interest) => {
+    if (interestField && interest) {
+      interestField.value = interest;
+    }
+
+    const subject = getSubjectByInterest(interest);
+    if (subjectField) {
+      subjectField.value = subject;
+    }
+    if (providerSubjectField) {
+      providerSubjectField.value = subject;
+    }
+    if (subjectPreview) {
+      subjectPreview.textContent = `Betreff: ${subject}`;
+    }
+
+    quickSelectButtons.forEach((button) => {
+      button.classList.toggle("active", button.dataset.interest === interest);
+    });
+
+    if (!messageField) return;
+    if (interest === "Premium Beratung") {
+      messageField.placeholder = "Erzaehlen Sie uns kurz von Ihrer Premium-Unterkunft, Wunschgaesten und Ihren Vermarktungszielen...";
+    } else if (interest === "Starter-Paket") {
+      messageField.placeholder = "Erzaehlen Sie uns kurz, wie viele Wohnungen Sie haben und welche Ablaeufe wir vereinfachen sollen...";
+    } else {
+      messageField.placeholder = "App, Website, Logo, Vermarktung, Kommunikation, Housekeeping...";
+    }
+  };
+
+  segmentCtas.forEach((cta) => {
+    cta.addEventListener("click", () => {
+      applyInterest(cta.dataset.interest || "");
+    });
+  });
+
+  quickSelectButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      applyInterest(button.dataset.interest || "");
+    });
+  });
+
+  if (interestField) {
+    interestField.addEventListener("change", () => {
+      applyInterest(interestField.value);
+    });
+  }
+
+  if (contactForm && formMessage) {
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const endpoint = contactForm.dataset.endpoint || contactForm.getAttribute("action") || "";
+      const selectedInterest = interestField ? interestField.value : "";
+
+      if (!endpoint || endpoint.includes("your_form_id")) {
+        formMessage.textContent = "Versand ist vorbereitet. Bitte in index.html die Formspree-ID eintragen (your_form_id), dann gehen Anfragen live raus.";
+        return;
+      }
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Wird gesendet...";
+      }
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: {
+            Accept: "application/json"
           }
         });
 
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, delay);
-
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  });
-
-  revealElements.forEach(el => revealObserver.observe(el));
-
-
-  /* ── HERO PARALLAX (subtle) ──────────────────────────────────── */
-  const heroBg = document.querySelector('.hero-photo-placeholder');
-  if (heroBg) {
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
-      }
-    }, { passive: true });
-  }
-
-
-  /* ── COUNTER ANIMATION (strip numbers) ──────────────────────── */
-  const stripNumbers = document.querySelectorAll('.strip-number');
-
-  function animateCounter(el) {
-    const text = el.textContent;
-    const num = parseFloat(text.replace(/[^0-9.]/g, ''));
-    if (isNaN(num)) return;
-
-    const suffix = text.replace(/[0-9.]/g, '');
-    const duration = 1400;
-    const start = performance.now();
-
-    function step(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(eased * num);
-      el.textContent = current + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    }
-
-    requestAnimationFrame(step);
-  }
-
-  const stripObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.strip-number').forEach(animateCounter);
-        stripObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  const introStrip = document.querySelector('.intro-strip');
-  if (introStrip) stripObserver.observe(introStrip);
-
-
-  /* ── BOOKING FORM ────────────────────────────────────────────── */
-  const bookingForm = document.getElementById('bookingForm');
-  const formSuccess = document.getElementById('formSuccess');
-
-  if (bookingForm) {
-    // Set minimum dates
-    const today = new Date().toISOString().split('T')[0];
-    const arrivalInput = document.getElementById('arrival');
-    const departureInput = document.getElementById('departure');
-
-    if (arrivalInput) arrivalInput.min = today;
-    if (departureInput) departureInput.min = today;
-
-    // Ensure departure is after arrival
-    if (arrivalInput && departureInput) {
-      arrivalInput.addEventListener('change', () => {
-        departureInput.min = arrivalInput.value;
-        if (departureInput.value && departureInput.value <= arrivalInput.value) {
-          departureInput.value = '';
+        if (!response.ok) {
+          throw new Error("Submit failed");
         }
-      });
-    }
 
-    bookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+        if (selectedInterest === "Premium Beratung") {
+          formMessage.textContent = "Danke fuer Ihre Premium-Anfrage. Wir melden uns mit einem Concierge-orientierten Vorschlag fuer Branding, App und Vermarktung.";
+        } else if (selectedInterest === "Starter-Paket") {
+          formMessage.textContent = "Danke fuer Ihre Starter-Anfrage. Wir melden uns mit einem schlanken Plan, der schnell entlastet und budgetfreundlich startet.";
+        } else {
+          formMessage.textContent = "Danke. Ihre Anfrage wurde gesendet. Wir melden uns zeitnah per E-Mail.";
+        }
 
-      const btn = bookingForm.querySelector('.btn-submit');
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
+        contactForm.reset();
 
-      // Simulate send (replace with real form submission / email service)
-      setTimeout(() => {
-        bookingForm.querySelectorAll('input, select, textarea').forEach(field => {
-          field.value = '';
+        quickSelectButtons.forEach((button) => {
+          button.classList.remove("active");
         });
-        btn.textContent = 'Send Enquiry';
-        btn.disabled = false;
-        formSuccess.classList.add('show');
 
-        setTimeout(() => formSuccess.classList.remove('show'), 6000);
-      }, 1200);
+        applyInterest("");
+      } catch (error) {
+        formMessage.textContent = "Der Versand hat gerade nicht geklappt. Bitte erneut versuchen oder direkt an info@terzle.com schreiben.";
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = "Unverbindlich anfragen";
+        }
+      }
     });
   }
 
-
-  /* ── GALLERY HOVER LABELS ────────────────────────────────────── */
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.style.cursor = 'pointer';
-  });
-
+  applyInterest(interestField ? interestField.value : "");
 });
