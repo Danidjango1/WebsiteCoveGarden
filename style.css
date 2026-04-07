@@ -273,9 +273,10 @@ p {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 16% 30%, rgba(255, 255, 255, 0.18) 0%, transparent 34%),
+    radial-gradient(circle at 16% 30%, rgba(255, 255, 255, 0.14) 0%, transparent 34%),
     radial-gradient(circle at 84% 18%, rgba(240, 138, 61, 0.25) 0%, transparent 32%),
-    linear-gradient(115deg, rgba(255, 255, 255, 0.09) 0%, transparent 44%);
+    linear-gradient(115deg, rgba(255, 255, 255, 0.07) 0%, transparent 44%),
+    linear-gradient(180deg, rgba(3, 20, 35, 0.2) 0%, rgba(3, 20, 35, 0.35) 100%);
   pointer-events: none;
 }
 
@@ -311,9 +312,14 @@ p {
   align-items: center;
 }
 
+.hero-copy h1 {
+  color: #ffffff;
+  text-shadow: 0 6px 20px rgba(4, 18, 32, 0.45);
+}
+
 .hero-lead {
   max-width: 60ch;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.97);
   margin-top: 1rem;
 }
 
@@ -321,7 +327,7 @@ p {
   display: none;
   margin-top: 0.85rem;
   max-width: 48ch;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.98);
   font-weight: 600;
 }
 
@@ -333,9 +339,9 @@ p {
 }
 
 .hero-mini-points span {
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  color: rgba(255, 255, 255, 0.95);
+  background: rgba(8, 36, 58, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  color: rgba(255, 255, 255, 0.99);
   border-radius: 999px;
   padding: 0.42rem 0.72rem;
   font-size: 0.78rem;
@@ -348,8 +354,8 @@ p {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  background: rgba(11, 41, 66, 0.38);
-  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(5, 28, 47, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 14px;
   padding: 0.55rem 0.65rem;
 }
@@ -411,8 +417,8 @@ p {
 }
 
 .hero-kpis div {
-  background: rgba(255, 255, 255, 0.13);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(8, 33, 52, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.33);
   border-radius: var(--radius-sm);
   padding: 0.8rem;
 }
@@ -460,12 +466,13 @@ p {
 .hero-card-label {
   position: absolute;
   left: 0.8rem;
-  right: 0.8rem;
+  right: 1.4rem;
   bottom: 0.8rem;
-  background: rgba(0, 0, 0, 0.48);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(145deg, rgba(6, 44, 73, 0.88) 0%, rgba(16, 92, 114, 0.82) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 12px;
   padding: 0.7rem;
+  box-shadow: 0 10px 22px rgba(4, 19, 31, 0.32);
 }
 
 .hero-card-label span {
@@ -562,6 +569,11 @@ p {
   align-items: center;
 }
 
+.app-phone {
+  display: flex;
+  justify-content: center;
+}
+
 .app-tabs {
   display: flex;
   gap: 0.55rem;
@@ -601,16 +613,18 @@ p {
 .phone-shell {
   max-width: 360px;
   margin-inline: auto;
-  background: #0d2030;
+  background: linear-gradient(160deg, #f8fcff 0%, #e6f3ff 48%, #dceff4 100%);
+  border: 1px solid #b9d2e6;
   border-radius: 34px;
   padding: 0.9rem;
-  box-shadow: var(--shadow);
+  box-shadow: 0 16px 34px rgba(9, 47, 79, 0.2);
 }
 
 .phone-screen {
   min-height: 380px;
   border-radius: 24px;
   background: linear-gradient(160deg, #ffffff 0%, #eaf4ff 60%, #e9f8f8 100%);
+  border: 1px solid #d4e3ef;
   padding: 1rem;
   display: none;
 }
