@@ -23,6 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateNav, { passive: true });
 
 
+  /* ── IMAGE LOADING OPTIMIZATION ─────────────────────────────── */
+  const firstHeroImage = document.querySelector('.hero-carousel-card img');
+  if (firstHeroImage) {
+    firstHeroImage.loading = 'eager';
+    firstHeroImage.decoding = 'async';
+    firstHeroImage.fetchPriority = 'high';
+  }
+
+  // Lazy-load all remaining images to reduce initial mobile payload.
+  document.querySelectorAll('img').forEach((img) => {
+    if (img === firstHeroImage) return;
+    if (!img.hasAttribute('loading')) img.loading = 'lazy';
+    if (!img.hasAttribute('decoding')) img.decoding = 'async';
+    if (!img.hasAttribute('fetchpriority')) img.fetchPriority = 'low';
+  });
+
+
   /* ── MOBILE MENU ─────────────────────────────────────────────── */
   const navToggle = document.querySelector('.nav-toggle');
   const mobileMenu = document.getElementById('mobileMenu');
