@@ -1,4 +1,4 @@
-name: Achtung
+name: "Neu!"
 
 # Automatisches Deployment bei jedem Push zu master
 on:
