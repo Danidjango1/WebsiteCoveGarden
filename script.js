@@ -138,13 +138,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const quickSelectButtons = document.querySelectorAll(".quick-select");
 
   const getSubjectByInterest = (interest) => {
-    if (interest === "Premium Beratung") {
-      return "Premium Lead | Beratung App + Branding + Vermarktung";
+    if (interest === "Premium Consulting") {
+      return "Premium Lead | App + Branding + Marketing";
     }
-    if (interest === "Starter-Paket") {
-      return "Starter Lead | App + Automatisierung fuer kleine Betreiber";
+    if (interest === "Starter Package") {
+      return "Starter Lead | App + Automation for Small Operators";
     }
-    return "Allgemeine Anfrage | Ferienwohnungs-Service";
+    return "General Inquiry | Holiday Rental Services";
   };
 
   const applyInterest = (interest) => {
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       providerSubjectField.value = subject;
     }
     if (subjectPreview) {
-      subjectPreview.textContent = `Betreff: ${subject}`;
+      subjectPreview.textContent = `Subject: ${subject}`;
     }
 
     quickSelectButtons.forEach((button) => {
@@ -168,12 +168,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (!messageField) return;
-    if (interest === "Premium Beratung") {
-      messageField.placeholder = "Erzaehlen Sie uns kurz von Ihrer Premium-Unterkunft, Wunschgaesten und Ihren Vermarktungszielen...";
-    } else if (interest === "Starter-Paket") {
-      messageField.placeholder = "Erzaehlen Sie uns kurz, wie viele Wohnungen Sie haben und welche Ablaeufe wir vereinfachen sollen...";
+    if (interest === "Premium Consulting") {
+      messageField.placeholder = "Tell us about your premium property, guest profile and growth goals...";
+    } else if (interest === "Starter Package") {
+      messageField.placeholder = "Tell us how many units you manage and which workflows should be simplified first...";
     } else {
-      messageField.placeholder = "App, Website, Logo, Vermarktung, Kommunikation, Housekeeping...";
+      messageField.placeholder = "App, website, logo, marketing, guest communication, housekeeping...";
     }
   };
 
@@ -204,13 +204,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const selectedInterest = interestField ? interestField.value : "";
 
       if (!endpoint || endpoint.includes("your_form_id")) {
-        formMessage.textContent = "Versand ist vorbereitet. Bitte in index.html die Formspree-ID eintragen (your_form_id), dann gehen Anfragen live raus.";
+        formMessage.textContent = "Submission is configured. Add your real Formspree ID in index.html (your_form_id) to go live.";
         return;
       }
 
       if (submitButton) {
         submitButton.disabled = true;
-        submitButton.textContent = "Wird gesendet...";
+        submitButton.textContent = "Sending...";
       }
 
       try {
@@ -226,12 +226,12 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error("Submit failed");
         }
 
-        if (selectedInterest === "Premium Beratung") {
-          formMessage.textContent = "Danke fuer Ihre Premium-Anfrage. Wir melden uns mit einem Concierge-orientierten Vorschlag fuer Branding, App und Vermarktung.";
-        } else if (selectedInterest === "Starter-Paket") {
-          formMessage.textContent = "Danke fuer Ihre Starter-Anfrage. Wir melden uns mit einem schlanken Plan, der schnell entlastet und budgetfreundlich startet.";
+        if (selectedInterest === "Premium Consulting") {
+          formMessage.textContent = "Thanks for your premium inquiry. We will send a concierge-style proposal for branding, app setup and marketing.";
+        } else if (selectedInterest === "Starter Package") {
+          formMessage.textContent = "Thanks for your starter inquiry. We will send a lean plan focused on speed, simplicity and cost efficiency.";
         } else {
-          formMessage.textContent = "Danke. Ihre Anfrage wurde gesendet. Wir melden uns zeitnah per E-Mail.";
+          formMessage.textContent = "Thanks. Your inquiry has been sent. We will get back to you by email shortly.";
         }
 
         contactForm.reset();
@@ -242,11 +242,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         applyInterest("");
       } catch (error) {
-        formMessage.textContent = "Der Versand hat gerade nicht geklappt. Bitte erneut versuchen oder direkt an info@terzle.com schreiben.";
+        formMessage.textContent = "Submission failed right now. Please try again or email us directly at info@terzle.com.";
       } finally {
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = "Unverbindlich anfragen";
+          submitButton.textContent = "Send Inquiry";
         }
       }
     });
