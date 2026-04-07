@@ -4,6 +4,74 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobileMenu");
   const navLinks = document.querySelectorAll(".nav-links a, .mobile-menu a");
   const desktopLinks = document.querySelectorAll(".nav-links a");
+  const abTextTargets = document.querySelectorAll("[data-ab-key]");
+
+  const ctaVariants = {
+    A: {
+      "hero-primary": "Get Your Offer in 24h",
+      "hero-secondary": "See App Flow",
+      "nav-primary": "Book Strategy Call",
+      "menu-primary": "Book Strategy Call",
+      "sticky-primary": "Free Strategy Call"
+    },
+    B: {
+      "hero-primary": "Book Strategy Call",
+      "hero-secondary": "View App Examples",
+      "nav-primary": "Get Free Growth Plan",
+      "menu-primary": "Get Free Growth Plan",
+      "sticky-primary": "Get Free Growth Plan"
+    }
+  };
+
+  const normalizeVariant = (rawValue) => {
+    const value = String(rawValue || "").trim().toUpperCase();
+    return value === "A" || value === "B" ? value : "";
+  };
+
+  const getActiveVariant = () => {
+    const forcedVariant = normalizeVariant(new URLSearchParams(window.location.search).get("ab"));
+    if (forcedVariant) {
+      try {
+        localStorage.setItem("tz_ab_variant", forcedVariant);
+      } catch (error) {
+        // Ignore storage issues and continue with forced variant.
+      }
+      return forcedVariant;
+    }
+
+    try {
+      const storedVariant = normalizeVariant(localStorage.getItem("tz_ab_variant"));
+      if (storedVariant) {
+        return storedVariant;
+      }
+    } catch (error) {
+      // Ignore storage issues and fall back to randomized assignment.
+    }
+
+    const assignedVariant = Math.random() < 0.5 ? "A" : "B";
+    try {
+      localStorage.setItem("tz_ab_variant", assignedVariant);
+    } catch (error) {
+      // Ignore storage issues in private or restricted contexts.
+    }
+    return assignedVariant;
+  };
+
+  const applyCtaVariant = (variant) => {
+    const dictionary = ctaVariants[variant] || ctaVariants.A;
+    abTextTargets.forEach((element) => {
+      const key = element.dataset.abKey;
+      if (!key || !dictionary[key]) return;
+      element.textContent = dictionary[key];
+    });
+
+    const variantField = document.getElementById("abVariant");
+    if (variantField) {
+      variantField.value = variant;
+    }
+  };
+
+  applyCtaVariant(getActiveVariant());
 
   const updateNav = () => {
     if (window.scrollY > 20) {

@@ -28,7 +28,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <a href="#contact" class="btn btn-nav">Book Strategy Call</a>
+      <a href="#contact" class="btn btn-nav" data-ab-key="nav-primary">Book Strategy Call</a>
 
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span>
@@ -43,7 +43,7 @@
       <a href="#app">App</a>
       <a href="#marketing">Marketing</a>
       <a href="#contact">Contact</a>
-      <a href="#contact" class="btn btn-primary">Book Strategy Call</a>
+      <a href="#contact" class="btn btn-primary" data-ab-key="menu-primary">Book Strategy Call</a>
     </div>
   </nav>
 
@@ -53,14 +53,30 @@
     <div class="container hero-grid">
       <div class="hero-copy reveal">
         <p class="eyebrow">Global service for premium and small operators</p>
-        <h1>Your holiday rental deserves its own digital operating system.</h1>
+        <h1>Get more direct bookings with one clear host system.</h1>
+        <div class="hero-mini-points" aria-label="Core benefits">
+          <span>Launch-ready app setup</span>
+          <span>Direct-booking website</span>
+          <span>Automated guest communication</span>
+        </div>
         <p class="hero-lead">
-          We build a custom app, high-converting website, tailored logo and full marketing setup for every property.
-          From boutique villas to 1-3 unit operators, guests get instant answers to recurring questions through videos, photos and clear step-by-step guidance.
+          We build a custom app, a conversion-focused website and a full guest communication system for your property.
+          Result: fewer repetitive questions, faster operations and more high-quality direct inquiries.
+        </p>
+        <p class="hero-lead-mobile">
+          Custom app, direct-booking website and automated workflows to reduce message chaos and increase bookings.
         </p>
         <div class="hero-actions">
-          <a href="#segments" class="btn btn-primary">See your segment offer</a>
-          <a href="#app" class="btn btn-ghost">View app examples</a>
+          <a href="#contact" class="btn btn-primary" data-ab-key="hero-primary">Get Your Offer in 24h</a>
+          <a href="#app" class="btn btn-ghost" data-ab-key="hero-secondary">See App Flow</a>
+        </div>
+        <div class="hero-proof" aria-label="Positioning">
+          <div class="proof-avatars" aria-hidden="true">
+            <span>PV</span>
+            <span>SO</span>
+            <span>BR</span>
+          </div>
+          <p>Built for premium villas and small operators. Strategy call plus concrete roadmap for your unit setup.</p>
         </div>
         <div class="hero-kpis">
           <div>
@@ -117,7 +133,7 @@
     <div class="container">
       <div class="section-head reveal">
         <p class="eyebrow">Segment focus</p>
-        <h2>Built for premium properties and small operators.</h2>
+        <h2>Choose your growth track and request a tailored plan.</h2>
       </div>
       <div class="pricing-grid">
         <article class="price-card reveal">
@@ -297,6 +313,7 @@
         </select>
         <input id="subject" name="subject" type="hidden" value="General Inquiry | Holiday Rental Services">
         <input id="providerSubject" name="_subject" type="hidden" value="General Inquiry | Holiday Rental Services">
+        <input id="abVariant" name="ab_variant" type="hidden" value="A">
         <p id="subjectPreview" class="subject-preview">Subject: General Inquiry | Holiday Rental Services</p>
 
         <label for="name">Name</label>
@@ -318,7 +335,7 @@
   </section>
 
   <div class="mobile-sticky-cta" aria-label="Quick contact">
-    <a href="#contact" class="btn btn-primary">Free Strategy Call</a>
+    <a href="#contact" class="btn btn-primary" data-ab-key="sticky-primary">Free Strategy Call</a>
   </div>
 
   <footer class="footer">
