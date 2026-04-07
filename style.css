@@ -721,6 +721,7 @@ p {
   transform: translateY(0);
 }
 
+/* ─── Tablet 1080px ─── */
 @media (max-width: 1080px) {
   .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -734,12 +735,19 @@ p {
 
   .hero-media {
     max-width: 680px;
+    margin-inline: auto;
+  }
+
+  .app-phone {
+    max-width: 400px;
+    margin-inline: auto;
   }
 }
 
+/* ─── Mobile 780px ─── */
 @media (max-width: 780px) {
   .container {
-    width: min(var(--max), calc(100% - 2rem));
+    width: min(var(--max), calc(100% - 1.5rem));
   }
 
   body {
@@ -747,9 +755,14 @@ p {
   }
 
   .section {
-    padding: 4.4rem 0;
+    padding: 3.5rem 0;
   }
 
+  .section-head {
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Navbar ── */
   .nav-links,
   .btn-nav {
     display: none;
@@ -759,53 +772,182 @@ p {
     display: block;
   }
 
+  .mobile-menu a {
+    font-size: 1rem;
+    padding: 0.3rem 0;
+  }
+
+  .mobile-menu .btn {
+    margin-top: 0.4rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Hero ── */
   .hero {
-    padding-top: 7.4rem;
+    padding: 6.2rem 0 3rem;
   }
 
   .hero h1 {
-    font-size: clamp(1.7rem, 8vw, 2.2rem);
+    font-size: clamp(1.65rem, 7.5vw, 2.2rem);
   }
 
   .hero-lead {
-    font-size: 0.96rem;
-    line-height: 1.45;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 0.8rem;
   }
 
   .hero-actions {
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 1.3rem;
     width: 100%;
   }
 
   .hero-actions .btn {
     width: 100%;
+    justify-content: center;
+    padding: 0.88rem 1rem;
+    font-size: 0.93rem;
   }
 
+  /* KPIs: keep 3 columns but compact */
+  .hero-kpis {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.45rem;
+    margin-top: 1.2rem;
+  }
+
+  .hero-kpis div {
+    padding: 0.55rem 0.3rem;
+    text-align: center;
+  }
+
+  .hero-kpis strong {
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+
+  .hero-kpis span {
+    font-size: 0.65rem;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  /* Hero images: show only main card */
   .hero-media {
     grid-template-columns: 1fr;
-    grid-template-rows: 220px 150px 150px;
+    grid-template-rows: 220px;
+    max-width: 100%;
+    margin-top: 1.2rem;
   }
 
-  .hero-kpis,
-  .pain-grid,
-  .marketing-grid,
+  .hero-card-main {
+    grid-column: 1;
+  }
+
+  .hero-card-small {
+    display: none;
+  }
+
+  /* ── Pain points ── */
+  .pain-points {
+    padding: 1.2rem 0 0.8rem;
+  }
+
+  .pain-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* ── Segments ── */
   .pricing-grid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
-  .service-grid,
+  /* ── Services: 2 cols, not 1 ── */
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .service-card {
+    padding: 0.9rem 0.85rem;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+  }
+
+  /* ── App: scrollable tabs ── */
+  .app-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.4rem;
+    scrollbar-width: none;
+  }
+
+  .app-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    flex-shrink: 0;
+    font-size: 0.82rem;
+    padding: 0.48rem 0.8rem;
+    white-space: nowrap;
+  }
+
+  .phone-shell {
+    max-width: 100%;
+    margin-top: 1.2rem;
+  }
+
+  .phone-screen {
+    min-height: 260px;
+  }
+
+  /* ── Visual band: 2 cols, last full-width ── */
   .band-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
   }
 
   .band-grid img {
-    height: 220px;
+    height: 180px;
   }
 
+  .band-grid img:last-child {
+    grid-column: 1 / -1;
+  }
+
+  /* ── Marketing ── */
+  .marketing-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* ── Contact ── */
+  .contact-grid {
+    gap: 1.8rem;
+  }
+
+  .contact-form {
+    padding: 1rem 0.9rem;
+  }
+
+  /* ── Footer ── */
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.85rem;
   }
 
+  /* ── Mobile sticky CTA ── */
   .mobile-sticky-cta {
     display: block;
     position: fixed;
@@ -817,6 +959,72 @@ p {
 
   .mobile-sticky-cta .btn {
     width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
     box-shadow: 0 10px 26px rgba(16, 36, 60, 0.24);
+  }
+}
+
+/* ─── Small phones 480px ─── */
+@media (max-width: 480px) {
+  .container {
+    width: min(var(--max), calc(100% - 1rem));
+  }
+
+  .section {
+    padding: 2.8rem 0;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 6.5vw, 1.9rem);
+  }
+
+  .hero {
+    padding: 5.8rem 0 2.6rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .hero-kpis div {
+    padding: 0.45rem 0.2rem;
+  }
+
+  .hero-kpis strong {
+    font-size: 1.1rem;
+  }
+
+  .hero-kpis span {
+    font-size: 0.62rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .band-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .band-grid img:last-child {
+    grid-column: 1;
+  }
+
+  .phone-screen {
+    min-height: 240px;
+  }
+
+  .pain-grid article,
+  .service-card,
+  .marketing-card {
+    padding: 0.9rem 0.8rem;
+  }
+
+  .quick-select {
+    font-size: 0.88rem;
+    padding: 0.55rem 0.65rem;
   }
 }
