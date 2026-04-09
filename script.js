@@ -8,18 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const ctaVariants = {
     A: {
-      "hero-primary": "Get Your Offer in 24h",
+      "hero-primary": "Contact Us",
       "hero-secondary": "See App Flow",
-      "nav-primary": "Book Strategy Call",
-      "menu-primary": "Book Strategy Call",
-      "sticky-primary": "Free Strategy Call"
+      "nav-primary": "Contact Us",
+      "menu-primary": "Contact Us",
+      "sticky-primary": "Contact Us"
     },
     B: {
-      "hero-primary": "Book Strategy Call",
+      "hero-primary": "Contact Us",
       "hero-secondary": "View App Examples",
-      "nav-primary": "Get Free Growth Plan",
-      "menu-primary": "Get Free Growth Plan",
-      "sticky-primary": "Get Free Growth Plan"
+      "nav-primary": "Contact Us",
+      "menu-primary": "Contact Us",
+      "sticky-primary": "Contact Us"
     }
   };
 
@@ -197,71 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const contactForm = document.getElementById("contactForm");
   const formMessage = document.getElementById("formMessage");
-  const interestField = document.getElementById("interest");
-  const subjectField = document.getElementById("subject");
-  const providerSubjectField = document.getElementById("providerSubject");
-  const subjectPreview = document.getElementById("subjectPreview");
-  const messageField = document.getElementById("message");
-  const segmentCtas = document.querySelectorAll(".segment-cta");
-  const quickSelectButtons = document.querySelectorAll(".quick-select");
-
-  const getSubjectByInterest = (interest) => {
-    if (interest === "Premium Consulting") {
-      return "Premium Lead | App + Branding + Marketing";
-    }
-    if (interest === "Starter Package") {
-      return "Starter Lead | App + Automation for Small Operators";
-    }
-    return "General Inquiry | Holiday Rental Services";
-  };
-
-  const applyInterest = (interest) => {
-    if (interestField && interest) {
-      interestField.value = interest;
-    }
-
-    const subject = getSubjectByInterest(interest);
-    if (subjectField) {
-      subjectField.value = subject;
-    }
-    if (providerSubjectField) {
-      providerSubjectField.value = subject;
-    }
-    if (subjectPreview) {
-      subjectPreview.textContent = `Subject: ${subject}`;
-    }
-
-    quickSelectButtons.forEach((button) => {
-      button.classList.toggle("active", button.dataset.interest === interest);
-    });
-
-    if (!messageField) return;
-    if (interest === "Premium Consulting") {
-      messageField.placeholder = "Tell us about your premium property, guest profile and growth goals...";
-    } else if (interest === "Starter Package") {
-      messageField.placeholder = "Tell us how many units you manage and which workflows should be simplified first...";
-    } else {
-      messageField.placeholder = "App, website, logo, marketing, guest communication, housekeeping...";
-    }
-  };
-
-  segmentCtas.forEach((cta) => {
-    cta.addEventListener("click", () => {
-      applyInterest(cta.dataset.interest || "");
-    });
-  });
-
-  quickSelectButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      applyInterest(button.dataset.interest || "");
-    });
-  });
-
-  if (interestField) {
-    interestField.addEventListener("change", () => {
-      applyInterest(interestField.value);
-    });
-  }
 
   if (contactForm && formMessage) {
     contactForm.addEventListener("submit", async (event) => {
@@ -269,10 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const submitButton = contactForm.querySelector('button[type="submit"]');
       const endpoint = contactForm.dataset.endpoint || contactForm.getAttribute("action") || "";
-      const selectedInterest = interestField ? interestField.value : "";
 
-      if (!endpoint || endpoint.includes("your_form_id")) {
-        formMessage.textContent = "Submission is configured. Add your real Formspree ID in index.html (your_form_id) to go live.";
+      if (!endpoint) {
+        formMessage.textContent = "The contact form is not configured yet.";
         return;
       }
 
@@ -294,23 +228,11 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error("Submit failed");
         }
 
-        if (selectedInterest === "Premium Consulting") {
-          formMessage.textContent = "Thanks for your premium inquiry. We will send a concierge-style proposal for branding, app setup and marketing.";
-        } else if (selectedInterest === "Starter Package") {
-          formMessage.textContent = "Thanks for your starter inquiry. We will send a lean plan focused on speed, simplicity and cost efficiency.";
-        } else {
-          formMessage.textContent = "Thanks. Your inquiry has been sent. We will get back to you by email shortly.";
-        }
+        formMessage.textContent = "Thanks. We will reply with a concrete proposal for your holiday rental setup.";
 
         contactForm.reset();
-
-        quickSelectButtons.forEach((button) => {
-          button.classList.remove("active");
-        });
-
-        applyInterest("");
       } catch (error) {
-        formMessage.textContent = "Submission failed right now. Please try again or email us directly at info@terzle.com.";
+        formMessage.textContent = "Sending failed right now. Please try again or email us directly at info@terzle.com.";
       } finally {
         if (submitButton) {
           submitButton.disabled = false;
